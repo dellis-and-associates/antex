@@ -11,14 +11,15 @@ import { ServiceIcon } from "@/components/icons";
 import { getService, SERVICES } from "@/lib/services";
 import { GUARANTEE_VERBATIM, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-type Props = { params: { slug: string } };
+type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const service = getService(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getService(slug);
   if (!service) return {};
   return {
     title: { absolute: service.metaTitle },
@@ -26,8 +27,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ServicePage({ params }: Props) {
-  const service = getService(params.slug);
+export default async function ServicePage({ params }: Props) {
+  const { slug } = await params;
+  const service = getService(slug);
   if (!service) notFound();
 
   return (

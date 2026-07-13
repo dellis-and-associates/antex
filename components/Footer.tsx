@@ -73,8 +73,14 @@ export function Footer() {
 
         <div className="flex flex-wrap justify-between gap-5 pt-7 text-[13px] text-[#7E948A]">
           <span>© {new Date().getFullYear()} Antex Pest Solutions. All rights reserved.</span>
-          <span>
-            Licensed & insured · Serving Utah since 2014
+          <span className="flex flex-wrap gap-x-5 gap-y-1">
+            <Link href="/privacy-policy" className="hover:text-white hover:underline">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-and-conditions" className="hover:text-white hover:underline">
+              Terms of Service
+            </Link>
+            <span>Licensed & insured · Serving Utah since 2014</span>
           </span>
         </div>
       </div>

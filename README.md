@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Antex Pest Solutions — antexpestsolutions.com rebuild
 
-## Getting Started
+Next.js 15 (App Router) + Payload CMS 3 backed by Supabase (Postgres + Storage).
+Full page/feature parity with the live site: home, services (+6 detail pages),
+locations, blog (+post pages), contact, privacy policy, terms, customer-login
+link, and the compliance-critical contact form (SMS consent text is verbatim —
+see `lib/site.ts`).
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The site is fully
+functional without any environment variables — blog posts render from the
+static seeds in `lib/blog.ts` and contact submissions are logged to the
+server console.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Payload CMS (blog, media, contact leads)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The admin panel lives at `/admin`. It needs Supabase credentials in
+`.env.local`:
 
-## Learn More
+1. **Database** — set `PAYLOAD_DATABASE_URI` to the Supabase *Transaction
+   Pooler* connection string (port 6543) and `PAYLOAD_SECRET` to a random
+   32+ char string (`openssl rand -base64 32`). Payload creates its tables
+   on first boot (dev push mode).
+2. **Media storage** — set the `S3_*` vars from Supabase → Storage → S3
+   connection. Without them, uploads land in `./media` (gitignored).
+3. **Seed the blog** — `npm run seed` loads the six field-note posts from
+   `lib/blog.ts` into the `posts` collection (idempotent).
+4. Visit `/admin` and create the first admin user.
 
-To learn more about Next.js, take a look at the following resources:
+Collections: `users` (admins), `media`, `posts` (drives `/blog`), and
+`contact-submissions` (every contact-form lead, including both A2P SMS
+consent booleans).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+When the CMS is unreachable or empty, `lib/posts.ts` silently falls back to
+the static seeds so the public site never breaks. Blog pages revalidate
+every 10 minutes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+- `npm run dev` / `build` / `start` / `lint`
+- `npm run seed` — seed blog posts into Payload
+- `npm run generate:types` — regenerate `payload-types.ts` after changing collections
+- `npm run generate:importmap` — regenerate the admin import map after adding admin components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Still TODO
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- CRM webhook forwarding for leads (GoHighLevel/LeadConnector) — see
+  `app/api/contact/route.ts`
+- Map embeds on the locations page

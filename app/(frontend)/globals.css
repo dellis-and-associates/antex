@@ -65,6 +65,59 @@
   }
 }
 
+@layer components {
+  /* Long-form article body — used by /blog/[slug] for both CMS richtext
+     output and static seed content. */
+  .article-prose h2 {
+    @apply font-display font-bold text-ink-950;
+    font-size: 26px;
+    line-height: 1.3;
+    margin: 2.2em 0 0.6em;
+  }
+  .article-prose h3 {
+    @apply font-display font-bold text-ink-950;
+    font-size: 21px;
+    line-height: 1.35;
+    margin: 1.8em 0 0.5em;
+  }
+  .article-prose > *:first-child {
+    margin-top: 0;
+  }
+  .article-prose p {
+    margin: 0 0 1.15em;
+    font-size: 17.5px;
+  }
+  .article-prose ul,
+  .article-prose ol {
+    margin: 0 0 1.15em;
+    padding-left: 1.4em;
+  }
+  .article-prose ul {
+    list-style: disc;
+  }
+  .article-prose ol {
+    list-style: decimal;
+  }
+  .article-prose li {
+    margin-bottom: 0.4em;
+  }
+  .article-prose a {
+    @apply text-pine-800 underline;
+  }
+  .article-prose blockquote {
+    border-left: 3px solid var(--pine-600);
+    padding-left: 1em;
+    margin: 0 0 1.15em;
+    font-style: italic;
+  }
+  .article-prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--r-md);
+    margin: 1.5em 0;
+  }
+}
+
 @layer utilities {
   /* The perimeter line — the one decorative device in the system */
   .perimeter-line {

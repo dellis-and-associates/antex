@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 /**
  * Line-icon set ported from the approved homepage (antex-homepage.html).
  * Stroke-based, geometric, no fills — matches the SVG illustration style.

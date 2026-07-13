@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Eyebrow } from "@/components/Eyebrow";
 import { CTABand } from "@/components/CTABand";
-import { BLOG_POSTS } from "@/lib/blog";
+import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: "Blog — Utah Pest Control Field Notes",
@@ -9,7 +10,12 @@ export const metadata: Metadata = {
     "Field notes from Antex technicians: rodents, box elder bugs and the pest pressure Utah homeowners actually face — St George to the Wasatch Front.",
 };
 
-export default function BlogPage() {
+// Revalidate so posts published in the CMS appear without a redeploy.
+export const revalidate = 600;
+
+export default async function BlogPage() {
+  const posts = await getAllPosts();
+
   return (
     <>
       <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-16 pb-16">
@@ -29,12 +35,10 @@ export default function BlogPage() {
       <section className="py-24 max-md:py-[68px]">
         <div className="max-w-[880px] mx-auto px-8">
           <div className="grid gap-[22px]">
-            {/* TODO(blog CMS): these seed posts mirror the live site's blog;
-                wire to a CMS and add per-post pages when content migrates. */}
-            {BLOG_POSTS.map((post) => (
+            {posts.map((post) => (
               <article
                 key={post.slug}
-                className="bg-white border border-sand-200 rounded-lg px-8 py-7 max-sm:px-5"
+                className="bg-white border border-sand-200 rounded-lg px-8 py-7 max-sm:px-5 transition-shadow hover:shadow-[0_2px_16px_rgba(28,38,32,0.08)]"
               >
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11.5px] tracking-[0.14em] uppercase text-pine-600">
                   <span>{post.topic}</span>
@@ -44,9 +48,19 @@ export default function BlogPage() {
                   </time>
                 </div>
                 <h2 className="font-display font-bold text-[24px] leading-[1.25] text-ink-950 mt-3 mb-2">
-                  {post.title}
+                  <Link href={`/blog/${post.slug}`} className="hover:underline">
+                    {post.title}
+                  </Link>
                 </h2>
                 <p className="text-[15.5px] leading-relaxed">{post.summary}</p>
+                <p className="mt-4">
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="font-mono text-[13px] tracking-[0.08em] uppercase text-pine-800 hover:underline"
+                  >
+                    Read the full note →
+                  </Link>
+                </p>
               </article>
             ))}
           </div>

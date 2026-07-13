@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Canonical design tokens — mirrors necessary-files/design-tokens.json.
+ * Tailwind (tailwind.config.ts) reads the same values; keep both in sync.
+ */
+:root {
+  /* color */
+  --ink-950: #0f1c17;
+  --pine-800: #17402f;
+  --pine-600: #1f6a47;
+  --pine-100: #dcede2;
+  --sand-50: #faf6ee;
+  --sand-200: #efe7d7;
+  --clay-600: #c2551e;
+  --clay-700: #a8460f;
+  --basalt-700: #33413a;
+  --white: #ffffff;
+
+  /* radius */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+
+  /* shadow */
+  --shadow-card: 0 10px 30px -12px rgba(15, 28, 23, 0.15);
+
+  /* signature motif — the treated-perimeter line */
+  --perimeter: 1.5px dashed rgba(31, 106, 71, 0.45);
+  --perimeter-on-dark: 1.5px dashed rgba(220, 237, 226, 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sand-50 font-body text-basalt-700;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Visible focus for every interactive element */
+  :focus-visible {
+    outline: 3px solid var(--clay-600);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer utilities {
+  /* The perimeter line — the one decorative device in the system */
+  .perimeter-line {
+    border: var(--perimeter);
+  }
+  .perimeter-line-dark {
+    border: var(--perimeter-on-dark);
+  }
+  .perimeter-underline {
+    border-bottom: 1.5px dashed rgba(31, 106, 71, 0.5);
+    padding-bottom: 2px;
+  }
+}

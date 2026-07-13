@@ -1,0 +1,17 @@
+<svg width="420" height="100" viewBox="0 0 420 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(0,2) scale(0.727)">
+    <path d="M60 6 C 78 14, 95 18, 108 18 L108 70 C108 100 88 118 60 127 C32 118 12 100 12 70 L12 18 C25 18 42 14 60 6 Z" fill="#1F6A47"/>
+    <path d="M60 13 C 75 19.5, 90 23, 101 23.5 L101 69 C101 95 84 111 60 119.5 C36 111 19 95 19 69 L19 23.5 C30 23 45 19.5 60 13 Z" fill="none" stroke="#FAF6EE" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/>
+    <g stroke="#FAF6EE" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M55 37 Q49 27 42 24"/><path d="M65 37 Q71 27 78 24"/>
+      <path d="M54 57 L38 47"/><path d="M66 57 L82 47"/>
+      <path d="M53 64 L35 65"/><path d="M67 64 L85 65"/>
+      <path d="M54 71 L38 84"/><path d="M66 71 L82 84"/>
+    </g>
+    <circle cx="60" cy="44" r="8.5" fill="#FAF6EE"/>
+    <ellipse cx="60" cy="63.5" rx="7.5" ry="9.5" fill="#FAF6EE"/>
+    <ellipse cx="60" cy="91" rx="12" ry="15" fill="#FAF6EE"/>
+  </g>
+  <text x="106" y="56" font-family="'Bricolage Grotesque','Archivo',sans-serif" font-weight="800" font-size="44" letter-spacing="1" fill="#0F1C17">ANTEX</text>
+  <text x="108" y="82" font-family="'Space Mono',monospace" font-size="14" letter-spacing="7.5" fill="#1F6A47">PEST SOLUTIONS</text>
+</svg>

@@ -1,37 +1,39 @@
-# Antex Pest Solutions — Rebrand v1.0
-## "Hold the Perimeter"
+# Antex Pest Solutions — Rebrand v2.0
+## Red / Black — the ant lockup
 
-Antex's job, literally, is drawing and defending a treated line around a property. The entire identity is built on that idea: a shield mark, a dashed perimeter motif, and a palette taken from the ground Antex actually works on — Utah juniper and red-rock sandstone.
+The identity is built directly from the logo: a line-drawn ant whose body carries the wordmark — **ANTEX** in Antex Red, **PEST SOLUTIONS** knocked out of an Ant Black bar. Two colors, white space, and one decorative device (the treated-perimeter line). Everything else stays out of the way.
 
 ---
 
 ## 1 · Logo
 
-**The mark:** a crest-style shield containing a geometric ant, ringed by a dashed *perimeter line* — the pest is identified, contained, and held inside the line. Reads clearly at 24px (favicon) and on a truck door.
+**The mark:** a single-weight outline ant (antennae up, body as an inverted teardrop) with the wordmark locked across its thorax. Supplied as a raster lockup; keep it on white or near-white surfaces at full color.
 
 | File | Use |
 |---|---|
-| `logos/antex-mark.svg` | App icon, favicon, social avatar, watermark |
-| `logos/antex-logo-horizontal.svg` | Website header, documents, invoices |
-| `logos/antex-logo-reversed.svg` | Dark surfaces (footer, vehicle wraps, uniforms) |
-| `logos/antex-mark-mono.svg` | Single-color: stamps, embroidery, engraving |
+| `public/logo.webp` | Website header, documents, invoices — light surfaces |
+| `public/logo-reversed.webp` | Dark surfaces (footer, vehicle wraps, uniforms) — ant/bar inverted to white, red preserved |
+| `app/icon.svg` | Favicon / app icon — simplified ant glyph on an Antex Red tile |
+| `new-logo.webp` (repo root) | Master source file |
 
-Clear space: keep a margin of ½ the shield's width on all sides. Never place the clay accent behind the mark.
+Clear space: keep a margin of ½ the bar's height on all sides. Never place the red accent behind the mark; never recolor the red.
+
+The v1.0 shield SVGs (`antex-mark.svg`, `antex-logo-horizontal.svg`, `antex-logo-reversed.svg`, `antex-mark-mono.svg`) are **deprecated** — do not use.
 
 ## 2 · Color tokens
 
 | Token | Hex | Role |
 |---|---|---|
-| `ink-950` Night Pine | `#0F1C17` | Footer, dark surfaces, headings |
-| `pine-800` Deep Juniper | `#17402F` | Hero surfaces, dark cards |
-| `pine-600` Juniper | `#1F6A47` | **Primary brand** — logo, links, icons |
-| `pine-100` Mist | `#DCEDE2` | Tints, tags, icon wells |
-| `sand-50` Bone | `#FAF6EE` | Page background |
-| `sand-200` Sandstone | `#EFE7D7` | Cards, wells, dividers |
-| `clay-600` Canyon Clay | `#C2551E` | **CTAs and highlights only** — scarcity keeps it powerful |
-| `basalt-700` Basalt | `#33413A` | Body text |
+| `ink-950` Ant Black | `#101010` | Footer, headings, the logo's ant & bar |
+| `ink-900` Charcoal | `#1B1B1B` | Hero surfaces, dark cards |
+| `red-600` Antex Red | `#E4342B` | **Primary brand** — wordmark, CTAs, links, icons |
+| `red-700` Brick | `#B9241C` | Hover/pressed, text links on light, destructive |
+| `red-50` Blush | `#FDECEA` | Tints, tags, icon wells |
+| `paper-50` Paper | `#FAFAFA` | Page background |
+| `paper-200` Fog | `#ECECEC` | Cards, wells, dividers |
+| `basalt-700` Basalt | `#3E3E3E` | Body text |
 
-Rule of thumb: ~60% sand, ~30% pine/ink, ~10% clay.
+Rule of thumb: ~60% paper/white, ~30% ink, ~10% red. Red is loud — scarcity keeps it powerful. Large red surfaces are reserved for the CTA band.
 
 ## 3 · Typography
 
@@ -43,7 +45,7 @@ Scale: Display 64/66 · H2 40/46 · H3 24/32 · Body 17/28 · Small 14/22 · Eye
 
 ## 4 · Signature motif — the perimeter line
 
-A 1.5px dashed line (`dash 5 / gap 7`, round caps, Juniper at 45% opacity) that appears around the hero visual, inside the shield, on process step dividers, and under phone-number links. It's the one decorative device in the system, and it means something: *the treated barrier we maintain.* Don't add other ornament.
+A 1.5px dashed line (`dash 5 / gap 7`, round caps, Antex Red at 40% opacity on light; white at 30% on dark) that appears around the hero visual, on process step dividers, and under phone-number links. It's the one decorative device in the system, and it means something: *the treated barrier we maintain.* Don't add other ornament.
 
 ## 5 · Voice
 
@@ -51,9 +53,6 @@ Plain verbs, homeowner's vocabulary, specific over clever. Buttons say exactly w
 
 ## 6 · Getting this into Figma
 
-Your Figma connector hit its Starter-plan MCP call limit, so this package is structured for import:
-
 1. **Tokens** → install the *Tokens Studio* plugin in Figma → import `design-tokens.json` → "Create styles & variables". You get the full color/type/space/radius system as Figma Variables.
-2. **Logos** → drag the four SVGs straight onto the canvas (Figma imports SVG natively, fully editable vectors).
-3. **Homepage UI** → open `antex-homepage.html` in a browser to review, then use the *html.to.design* plugin (paste the file or a hosted URL) to convert it into editable Figma frames — or ask me to push it into your file directly once the Figma limit resets or the plan is upgraded.
-4. Fonts: enable **Bricolage Grotesque**, **Archivo**, **Space Mono** (all free Google Fonts, available in Figma's font picker).
+2. **Logos** → drag `public/logo.webp` / `public/logo-reversed.webp` onto the canvas.
+3. Fonts: enable **Bricolage Grotesque**, **Archivo**, **Space Mono** (all free Google Fonts, available in Figma's font picker).

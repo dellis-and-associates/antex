@@ -1,20 +1,10 @@
-<svg width="120" height="132" viewBox="0 0 120 132" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Shield -->
-  <path d="M60 6 C 78 14, 95 18, 108 18 L108 70 C108 100 88 118 60 127 C32 118 12 100 12 70 L12 18 C25 18 42 14 60 6 Z" fill="#1F6A47"/>
-  <!-- Perimeter tick line -->
-  <path d="M60 13 C 75 19.5, 90 23, 101 23.5 L101 69 C101 95 84 111 60 119.5 C36 111 19 95 19 69 L19 23.5 C30 23 45 19.5 60 13 Z" fill="none" stroke="#FAF6EE" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/>
-  <!-- Ant -->
-  <g stroke="#FAF6EE" stroke-width="4" stroke-linecap="round" fill="none">
-    <path d="M55 37 Q49 27 42 24"/>
-    <path d="M65 37 Q71 27 78 24"/>
-    <path d="M54 57 L38 47"/>
-    <path d="M66 57 L82 47"/>
-    <path d="M53 64 L35 65"/>
-    <path d="M67 64 L85 65"/>
-    <path d="M54 71 L38 84"/>
-    <path d="M66 71 L82 84"/>
-  </g>
-  <circle cx="60" cy="44" r="8.5" fill="#FAF6EE"/>
-  <ellipse cx="60" cy="63.5" rx="7.5" ry="9.5" fill="#FAF6EE"/>
-  <ellipse cx="60" cy="91" rx="12" ry="15" fill="#FAF6EE"/>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Antex ant mark — simplified from new-logo.webp for favicon sizes -->
+  <rect width="64" height="64" rx="14" fill="#E4342B"/>
+  <!-- head/body: inverted teardrop, open at the antenna bases -->
+  <path d="M26 17 C 16 20, 11 27, 11 33 C 11 44 20 53 32 58 C 44 53 53 44 53 33 C 53 27 48 20 38 17"
+        stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <!-- antennae -->
+  <path d="M27 17 Q 23 9, 13 6" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+  <path d="M37 17 Q 41 9, 51 6" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" fill="none"/>
 </svg>

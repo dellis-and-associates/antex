@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-16 pb-16">
+      <header className="bg-gradient-to-b from-paper-50 to-[#F4EEE1] pt-16 pb-16">
         <div className="max-w-wrap mx-auto px-8">
           <Eyebrow>What we handle</Eyebrow>
           <h1 className="font-display text-display tracking-[-0.01em] text-ink-950 mt-[22px] mb-5 max-w-[20ch]">

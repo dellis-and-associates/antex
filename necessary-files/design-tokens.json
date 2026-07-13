@@ -1,18 +1,20 @@
 {
-  "$description": "Antex Pest Solutions — Brand Foundations v1.0 · 'Hold the Perimeter'. Import into Figma with the Tokens Studio plugin.",
+  "$description": "Antex Pest Solutions — Brand Foundations v2.0 · red/black identity from the ant-lockup logo (new-logo.webp). Import into Figma with the Tokens Studio plugin.",
   "color": {
-    "ink": { "950": { "value": "#0F1C17", "type": "color", "description": "Night Pine — footer, dark surfaces, headings" } },
-    "pine": {
-      "800": { "value": "#17402F", "type": "color", "description": "Deep Juniper — hero surface, dark cards" },
-      "600": { "value": "#1F6A47", "type": "color", "description": "Juniper — primary brand color, links, icons" },
-      "100": { "value": "#DCEDE2", "type": "color", "description": "Mist — tints, tags, icon wells" }
+    "ink": {
+      "950": { "value": "#101010", "type": "color", "description": "Ant Black — footer, dark surfaces, headings. Matches the logo's ant and bar." },
+      "900": { "value": "#1B1B1B", "type": "color", "description": "Charcoal — hero surface, dark cards" }
     },
-    "sand": {
-      "50": { "value": "#FAF6EE", "type": "color", "description": "Bone — page background" },
-      "200": { "value": "#EFE7D7", "type": "color", "description": "Sandstone — cards, section wells, dividers" }
+    "red": {
+      "600": { "value": "#E4342B", "type": "color", "description": "Antex Red — primary brand color. Wordmark, CTAs, links, icons." },
+      "700": { "value": "#B9241C", "type": "color", "description": "Brick — hover/pressed states, text links on light, destructive" },
+      "50":  { "value": "#FDECEA", "type": "color", "description": "Blush — tints, tags, icon wells" }
     },
-    "clay": { "600": { "value": "#C2551E", "type": "color", "description": "Canyon Clay — CTAs and highlights ONLY. Never for large surfaces." } },
-    "basalt": { "700": { "value": "#33413A", "type": "color", "description": "Basalt — body text on light" } },
+    "paper": {
+      "50": { "value": "#FAFAFA", "type": "color", "description": "Paper — page background (the logo lives on white)" },
+      "200": { "value": "#ECECEC", "type": "color", "description": "Fog — cards, section wells, dividers" }
+    },
+    "basalt": { "700": { "value": "#3E3E3E", "type": "color", "description": "Basalt — body text on light" } },
     "white": { "value": "#FFFFFF", "type": "color" }
   },
   "font": {
@@ -47,9 +49,9 @@
     "pill": { "value": "999", "type": "borderRadius" }
   },
   "shadow": {
-    "card": { "value": { "x": "0", "y": "10", "blur": "30", "spread": "-12", "color": "#0F1C1726" }, "type": "boxShadow" }
+    "card": { "value": { "x": "0", "y": "10", "blur": "30", "spread": "-12", "color": "#10101026" }, "type": "boxShadow" }
   },
   "motif": {
-    "perimeter": { "value": "1.5px dashed rgba(31,106,71,.45), dash 5 gap 7, round caps", "type": "other", "description": "Signature element: the treated-perimeter line. Used around the hero visual, guarantee badge, and section dividers." }
+    "perimeter": { "value": "1.5px dashed rgba(228,52,43,.4), dash 5 gap 7, round caps", "type": "other", "description": "Signature element: the treated-perimeter line. Used around the hero visual, guarantee badge, and section dividers." }
   }
 }

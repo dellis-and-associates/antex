@@ -16,7 +16,7 @@ export function CTABand({
   copy?: string;
 }) {
   return (
-    <section className="bg-clay-600 py-[76px]">
+    <section className="bg-red-600 py-[76px]">
       <div className="max-w-wrap mx-auto px-8 flex flex-wrap items-center justify-between gap-10">
         <div>
           <Eyebrow tone="clay">{eyebrow}</Eyebrow>

@@ -44,13 +44,13 @@ export default function Home() {
   return (
     <>
       {/* hero */}
-      <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-[84px] pb-[90px] overflow-hidden">
+      <header className="bg-gradient-to-b from-paper-50 to-[#F4EEE1] pt-[84px] pb-[90px] overflow-hidden">
         <div className="max-w-wrap mx-auto px-8 grid lg:grid-cols-[1.05fr_.95fr] gap-[72px] items-center">
           <div>
             <Eyebrow>Licensed & local · Utah since 2014</Eyebrow>
             <h1 className="font-display text-display tracking-[-0.01em] text-ink-950 mt-[22px] mb-5">
               Pest protection that{" "}
-              <em className="not-italic text-pine-600">holds the line.</em>
+              <em className="not-italic text-red-600">holds the line.</em>
             </h1>
             <p className="text-[19px] max-w-[52ch]">
               Antex draws a treated perimeter around your home or business — and
@@ -67,7 +67,7 @@ export default function Home() {
               {["EPA-registered products", "Safe for kids & pets", "Same-week scheduling"].map(
                 (item) => (
                   <span key={item} className="flex items-center gap-2">
-                    <CheckIcon className="w-4 h-4 text-pine-600" />
+                    <CheckIcon className="w-4 h-4 text-red-600" />
                     {item}
                   </span>
                 )
@@ -80,9 +80,9 @@ export default function Home() {
               <HouseScene />
               <div
                 id="guarantee"
-                className="absolute -bottom-6 left-[34px] bg-white border border-sand-200 rounded-[14px] shadow-card px-5 py-[14px] flex items-center gap-[13px]"
+                className="absolute -bottom-6 left-[34px] bg-white border border-paper-200 rounded-[14px] shadow-card px-5 py-[14px] flex items-center gap-[13px]"
               >
-                <div className="font-display font-extrabold text-[26px] leading-none text-pine-600">
+                <div className="font-display font-extrabold text-[26px] leading-none text-red-600">
                   100%
                 </div>
                 <div className="text-[12.5px] leading-[1.35]">
@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* process */}
-      <section id="process" className="bg-pine-800 text-sand-50 py-24 max-md:py-[68px]">
+      <section id="process" className="bg-ink-900 text-paper-50 py-24 max-md:py-[68px]">
         <div className="max-w-wrap mx-auto px-8">
           <SectionHeader
             eyebrow="How it works"
@@ -166,7 +166,7 @@ export default function Home() {
             <ul className="mt-[30px] grid gap-[18px] list-none">
               {WHY_POINTS.map((p) => (
                 <li key={p.title} className="flex gap-[14px] text-[16px]">
-                  <CheckIcon className="flex-none w-[22px] h-[22px] text-pine-600 mt-[3px]" />
+                  <CheckIcon className="flex-none w-[22px] h-[22px] text-red-600 mt-[3px]" />
                   <span>
                     <b className="text-ink-950">{p.title}</b> {p.copy}
                   </span>
@@ -194,7 +194,7 @@ export default function Home() {
       {/* areas */}
       <section
         id="areas"
-        className="bg-sand-200 border-y border-[#E4D9C3] py-24 max-md:py-[68px]"
+        className="bg-paper-200 border-y border-[#E0E0E0] py-24 max-md:py-[68px]"
       >
         <div className="max-w-wrap mx-auto px-8">
           <SectionHeader
@@ -218,7 +218,7 @@ export default function Home() {
       {/* testimonial */}
       <section className="py-24 max-md:py-[68px]">
         <div className="max-w-[880px] mx-auto px-8 text-center">
-          <div className="text-clay-600 text-[20px] tracking-[6px]" aria-label="Five star rating">
+          <div className="text-red-600 text-[20px] tracking-[6px]" aria-label="Five star rating">
             ★★★★★
           </div>
           <blockquote className="font-display font-bold text-[clamp(24px,2.8vw,34px)] leading-[1.3] text-ink-950 mt-[26px] mb-[22px]">
@@ -226,7 +226,7 @@ export default function Home() {
             them the same visit, and the mice never came back. When we called
             about wasps in July, they were out in two days.&rdquo;
           </blockquote>
-          <cite className="not-italic font-mono text-[13px] tracking-[0.14em] uppercase text-pine-600">
+          <cite className="not-italic font-mono text-[13px] tracking-[0.14em] uppercase text-red-600">
             Homeowner · Washington Fields, St George
           </cite>
         </div>

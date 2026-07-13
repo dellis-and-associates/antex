@@ -15,13 +15,13 @@ export function Eyebrow({
   className?: string;
 }) {
   const text = {
-    light: "text-pine-600",
-    dark: "text-pine-100",
+    light: "text-red-600",
+    dark: "text-paper-200",
     clay: "text-[#FBE3D3]",
   }[tone];
   const tick = {
-    light: "border-[rgba(31,106,71,0.45)]",
-    dark: "border-[rgba(220,237,226,0.5)]",
+    light: "border-[rgba(228,52,43,0.45)]",
+    dark: "border-[rgba(255,255,255,0.4)]",
     clay: "border-[rgba(251,227,211,0.6)]",
   }[tone];
   return (

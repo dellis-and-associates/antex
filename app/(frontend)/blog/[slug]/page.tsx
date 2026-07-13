@@ -34,15 +34,15 @@ export default async function BlogPostPage({ params }: Args) {
 
   return (
     <>
-      <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-14 pb-14">
+      <header className="bg-gradient-to-b from-paper-50 to-[#F4EEE1] pt-14 pb-14">
         <div className="max-w-[760px] mx-auto px-8">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11.5px] tracking-[0.14em] uppercase text-pine-600">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11.5px] tracking-[0.14em] uppercase text-red-600">
             <Link href="/blog" className="hover:underline">
               Field notes
             </Link>
-            <span aria-hidden="true" className="w-[26px] border-t-[1.5px] border-dashed border-[rgba(31,106,71,0.45)]" />
+            <span aria-hidden="true" className="w-[26px] border-t-[1.5px] border-dashed border-[rgba(228,52,43,0.45)]" />
             <span>{post.topic}</span>
-            <span aria-hidden="true" className="w-[26px] border-t-[1.5px] border-dashed border-[rgba(31,106,71,0.45)]" />
+            <span aria-hidden="true" className="w-[26px] border-t-[1.5px] border-dashed border-[rgba(228,52,43,0.45)]" />
             <time dateTime={post.date} className="text-basalt-700/70">
               {post.dateDisplay}
             </time>

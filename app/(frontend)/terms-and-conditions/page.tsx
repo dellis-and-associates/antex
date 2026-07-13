@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-16 pb-12">
+      <header className="bg-gradient-to-b from-paper-50 to-[#F4EEE1] pt-16 pb-12">
         <div className="max-w-[760px] mx-auto px-8">
           <Eyebrow>Legal</Eyebrow>
           <h1 className="font-display font-bold text-[38px] max-sm:text-[30px] leading-[1.15] text-ink-950 mt-5 mb-3">

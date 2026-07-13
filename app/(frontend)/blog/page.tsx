@@ -18,7 +18,7 @@ export default async function BlogPage() {
 
   return (
     <>
-      <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-16 pb-16">
+      <header className="bg-gradient-to-b from-paper-50 to-[#F4EEE1] pt-16 pb-16">
         <div className="max-w-wrap mx-auto px-8">
           <Eyebrow>Field notes</Eyebrow>
           <h1 className="font-display text-display tracking-[-0.01em] text-ink-950 mt-[22px] mb-5 max-w-[20ch]">
@@ -38,11 +38,11 @@ export default async function BlogPage() {
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="bg-white border border-sand-200 rounded-lg px-8 py-7 max-sm:px-5 transition-shadow hover:shadow-[0_2px_16px_rgba(28,38,32,0.08)]"
+                className="bg-white border border-paper-200 rounded-lg px-8 py-7 max-sm:px-5 transition-shadow hover:shadow-[0_2px_16px_rgba(28,38,32,0.08)]"
               >
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11.5px] tracking-[0.14em] uppercase text-pine-600">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[11.5px] tracking-[0.14em] uppercase text-red-600">
                   <span>{post.topic}</span>
-                  <span aria-hidden="true" className="w-[26px] border-t-[1.5px] border-dashed border-[rgba(31,106,71,0.45)]" />
+                  <span aria-hidden="true" className="w-[26px] border-t-[1.5px] border-dashed border-[rgba(228,52,43,0.45)]" />
                   <time dateTime={post.date} className="text-basalt-700/70">
                     {post.dateDisplay}
                   </time>
@@ -56,7 +56,7 @@ export default async function BlogPage() {
                 <p className="mt-4">
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="font-mono text-[13px] tracking-[0.08em] uppercase text-pine-800 hover:underline"
+                    className="font-mono text-[13px] tracking-[0.08em] uppercase text-red-700 hover:underline"
                   >
                     Read the full note →
                   </Link>

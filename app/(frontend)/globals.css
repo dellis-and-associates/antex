@@ -8,15 +8,14 @@
  */
 :root {
   /* color */
-  --ink-950: #0f1c17;
-  --pine-800: #17402f;
-  --pine-600: #1f6a47;
-  --pine-100: #dcede2;
-  --sand-50: #faf6ee;
-  --sand-200: #efe7d7;
-  --clay-600: #c2551e;
-  --clay-700: #a8460f;
-  --basalt-700: #33413a;
+  --ink-950: #101010;
+  --ink-900: #1b1b1b;
+  --red-600: #e4342b;
+  --red-700: #b9241c;
+  --red-50: #fdecea;
+  --paper-50: #fafafa;
+  --paper-200: #ececec;
+  --basalt-700: #3e3e3e;
   --white: #ffffff;
 
   /* radius */
@@ -26,11 +25,11 @@
   --r-pill: 999px;
 
   /* shadow */
-  --shadow-card: 0 10px 30px -12px rgba(15, 28, 23, 0.15);
+  --shadow-card: 0 10px 30px -12px rgba(16, 16, 16, 0.15);
 
   /* signature motif — the treated-perimeter line */
-  --perimeter: 1.5px dashed rgba(31, 106, 71, 0.45);
-  --perimeter-on-dark: 1.5px dashed rgba(220, 237, 226, 0.35);
+  --perimeter: 1.5px dashed rgba(228, 52, 43, 0.4);
+  --perimeter-on-dark: 1.5px dashed rgba(255, 255, 255, 0.3);
 }
 
 @layer base {
@@ -39,7 +38,7 @@
   }
 
   body {
-    @apply bg-sand-50 font-body text-basalt-700;
+    @apply bg-paper-50 font-body text-basalt-700;
     font-size: 17px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -47,7 +46,7 @@
 
   /* Visible focus for every interactive element */
   :focus-visible {
-    outline: 3px solid var(--clay-600);
+    outline: 3px solid var(--red-600);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -62,6 +61,37 @@
     html {
       scroll-behavior: auto;
     }
+  }
+  /*
+   * shadcn/ui semantic theme — HSL triplets mapped from the brand tokens
+   * above (the site is light-only, so no .dark block).
+   *   background/foreground  → Paper / Basalt
+   *   primary                → Antex Red (CTAs, links, per BRAND-GUIDE.md §2)
+   *   secondary + accent     → Blush / Brick
+   *   muted / border / input → Fog
+   *   ring                   → Antex Red
+   */
+  :root {
+    --background: 0 0% 98%; /* paper-50 */
+    --foreground: 0 0% 24%; /* basalt-700 */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6%; /* ink-950 */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6%;
+    --primary: 3 77% 53%; /* red-600 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 6 83% 96%; /* red-50 */
+    --secondary-foreground: 3 74% 42%; /* red-700 */
+    --muted: 0 0% 93%; /* paper-200 */
+    --muted-foreground: 0 0% 38%;
+    --accent: 6 83% 96%; /* red-50 */
+    --accent-foreground: 3 74% 42%; /* red-700 */
+    --destructive: 3 74% 42%; /* red-700 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 93%; /* paper-200 */
+    --input: 0 0% 93%; /* paper-200 */
+    --ring: 3 77% 53%; /* red-600 */
+    --radius: 12px;
   }
 }
 
@@ -102,10 +132,10 @@
     margin-bottom: 0.4em;
   }
   .article-prose a {
-    @apply text-pine-800 underline;
+    @apply text-red-700 underline;
   }
   .article-prose blockquote {
-    border-left: 3px solid var(--pine-600);
+    border-left: 3px solid var(--red-600);
     padding-left: 1em;
     margin: 0 0 1.15em;
     font-style: italic;
@@ -127,7 +157,15 @@
     border: var(--perimeter-on-dark);
   }
   .perimeter-underline {
-    border-bottom: 1.5px dashed rgba(31, 106, 71, 0.5);
+    border-bottom: 1.5px dashed rgba(228, 52, 43, 0.5);
     padding-bottom: 2px;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }

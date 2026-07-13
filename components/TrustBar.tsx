@@ -13,9 +13,9 @@ export function TrustBar() {
           <span
             key={item}
             role="listitem"
-            className="flex items-center gap-[10px] font-mono text-[12.5px] tracking-[0.14em] uppercase text-sand-200"
+            className="flex items-center gap-[10px] font-mono text-[12.5px] tracking-[0.14em] uppercase text-paper-200"
           >
-            <b aria-hidden="true" className="font-normal text-clay-600">
+            <b aria-hidden="true" className="font-normal text-red-600">
               ✚
             </b>
             {item}

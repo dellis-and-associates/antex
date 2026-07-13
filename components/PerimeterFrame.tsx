@@ -14,7 +14,7 @@ export function PerimeterFrame({
   className?: string;
   padded?: boolean;
 }) {
-  const corner = "absolute w-[14px] h-[14px] border-pine-600";
+  const corner = "absolute w-[14px] h-[14px] border-red-600";
   return (
     <div
       className={`relative rounded-lg perimeter-line bg-white/35 ${

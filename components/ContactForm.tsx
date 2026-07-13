@@ -1,7 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "./Button";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 import {
   SMS_CONSENT_MARKETING,
   SMS_CONSENT_TRANSACTIONAL,
@@ -9,9 +20,10 @@ import {
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+/* Brand field skin over the shadcn defaults (live-site parity). */
 const inputCls =
-  "w-full bg-white border border-sand-200 rounded-[10px] px-4 py-3 text-[15.5px] text-ink-950 placeholder:text-basalt-700/50 focus:border-pine-600";
-const labelCls = "block font-medium text-[14.5px] text-ink-950 mb-1.5";
+  "h-auto bg-white border-paper-200 rounded-[10px] px-4 py-3 text-[15.5px] md:text-[15.5px] text-ink-950 shadow-none placeholder:text-basalt-700/50 focus:border-red-600";
+const labelCls = "block font-medium text-[14.5px] leading-normal text-ink-950 mb-1.5";
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -105,20 +117,25 @@ export function ContactForm() {
       </div>
 
       <div className="mt-4">
-        <label className={labelCls} htmlFor="newCustomer">
+        <Label className={labelCls} htmlFor="newCustomer">
           Are you a new customer?
-        </label>
-        <select id="newCustomer" name="newCustomer" className={inputCls} defaultValue="Yes">
-          <option>Yes</option>
-          <option>No</option>
-        </select>
+        </Label>
+        <Select name="newCustomer" defaultValue="Yes">
+          <SelectTrigger id="newCustomer" className={inputCls}>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Yes">Yes</SelectItem>
+            <SelectItem value="No">No</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="mt-4">
-        <label className={labelCls} htmlFor="message">
-          How can we help you? <span aria-hidden="true" className="text-clay-600">*</span>
-        </label>
-        <textarea
+        <Label className={labelCls} htmlFor="message">
+          How can we help you? <span aria-hidden="true" className="text-red-600">*</span>
+        </Label>
+        <Textarea
           id="message"
           name="message"
           rows={4}
@@ -129,7 +146,7 @@ export function ContactForm() {
           placeholder="What are you seeing, and where?"
         />
         {errors.message ? (
-          <p id="message-error" className="text-[13px] text-clay-700 mt-1" role="alert">
+          <p id="message-error" className="text-[13px] text-red-700 mt-1" role="alert">
             {errors.message}
           </p>
         ) : null}
@@ -147,7 +164,7 @@ export function ContactForm() {
           {status === "submitting" ? "Sending…" : "Book my free inspection"}
         </Button>
         {status === "error" ? (
-          <p className="text-[14px] text-clay-700 mt-3" role="alert">
+          <p className="text-[14px] text-red-700 mt-3" role="alert">
             Something went wrong sending your request. Please try again, or
             call us directly.
           </p>
@@ -174,10 +191,10 @@ function Field({
 }) {
   return (
     <div>
-      <label className={labelCls} htmlFor={name}>
-        {label} <span aria-hidden="true" className="text-clay-600">*</span>
-      </label>
-      <input
+      <Label className={labelCls} htmlFor={name}>
+        {label} <span aria-hidden="true" className="text-red-600">*</span>
+      </Label>
+      <Input
         id={name}
         name={name}
         type={type}
@@ -189,7 +206,7 @@ function Field({
         className={inputCls}
       />
       {error ? (
-        <p id={`${name}-error`} className="text-[13px] text-clay-700 mt-1" role="alert">
+        <p id={`${name}-error`} className="text-[13px] text-red-700 mt-1" role="alert">
           {error}
         </p>
       ) : null}
@@ -198,15 +215,21 @@ function Field({
 }
 
 function Consent({ name, text }: { name: string; text: string }) {
+  const id = `consent-${name}`;
   return (
-    <label className="flex gap-3 items-start text-[13px] leading-[1.6] cursor-pointer">
-      <input
-        type="checkbox"
+    <div className="flex gap-3 items-start">
+      <Checkbox
+        id={id}
         name={name}
         value="yes"
-        className="mt-0.5 w-4 h-4 flex-none accent-[#1F6A47]"
+        className="mt-0.5 flex-none border-paper-200 bg-white data-[state=checked]:bg-red-600 data-[state=checked]:border-red-600 data-[state=checked]:text-white"
       />
-      <span>{text}</span>
-    </label>
+      <Label
+        htmlFor={id}
+        className="text-[13px] font-normal leading-[1.6] cursor-pointer"
+      >
+        {text}
+      </Label>
+    </div>
   );
 }

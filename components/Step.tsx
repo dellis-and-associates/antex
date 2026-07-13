@@ -14,14 +14,14 @@ export function Step({
   children: ReactNode;
 }) {
   return (
-    <div className="px-[34px] py-[38px] border-[rgba(220,237,226,0.35)] [border-style:dashed] border-0 max-md:[&:not(:first-child)]:border-t-[1.5px] md:[&:not(:first-child)]:border-l-[1.5px]">
-      <div className="font-mono text-[13px] tracking-[0.2em] text-clay-600">
+    <div className="px-[34px] py-[38px] border-[rgba(255,255,255,0.3)] [border-style:dashed] border-0 max-md:[&:not(:first-child)]:border-t-[1.5px] md:[&:not(:first-child)]:border-l-[1.5px]">
+      <div className="font-mono text-[13px] tracking-[0.2em] text-red-600">
         {num}
       </div>
       <h3 className="font-body font-semibold text-[23px] text-white mt-[14px] mb-[10px]">
         {title}
       </h3>
-      <p className="text-pine-100 text-[15.5px]">{children}</p>
+      <p className="text-paper-200 text-[15.5px]">{children}</p>
     </div>
   );
 }

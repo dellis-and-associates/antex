@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function LocationsPage() {
   return (
     <>
-      <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-16 pb-16">
+      <header className="bg-gradient-to-b from-paper-50 to-[#F4EEE1] pt-16 pb-16">
         <div className="max-w-wrap mx-auto px-8">
           <Eyebrow>Service areas</Eyebrow>
           <h1 className="font-display text-display tracking-[-0.01em] text-ink-950 mt-[22px] mb-5 max-w-[20ch]">
@@ -25,7 +25,7 @@ export default function LocationsPage() {
             From red-rock country to the Uinta Basin to the Wasatch Front —
             local technicians who know the pests on your street, reachable at
             one number:{" "}
-            <a href={PHONE_TEL} className="font-mono text-[17px] text-pine-800 perimeter-underline whitespace-nowrap">
+            <a href={PHONE_TEL} className="font-mono text-[17px] text-red-700 perimeter-underline whitespace-nowrap">
               {PHONE_DISPLAY}
             </a>
             .
@@ -43,7 +43,7 @@ export default function LocationsPage() {
               className="grid lg:grid-cols-2 gap-10 items-center"
             >
               <div className={i % 2 === 1 ? "lg:order-2" : undefined}>
-                <div className="font-mono text-[11.5px] tracking-[0.14em] uppercase text-pine-600">
+                <div className="font-mono text-[11.5px] tracking-[0.14em] uppercase text-red-600">
                   {l.tagline}
                 </div>
                 <h2 className="font-display text-h2 tracking-[-0.01em] text-ink-950 mt-2 mb-3">
@@ -57,7 +57,7 @@ export default function LocationsPage() {
                   <br />
                   <a
                     href={PHONE_TEL}
-                    className="inline-block mt-2 font-mono text-[14px] text-pine-800 perimeter-underline"
+                    className="inline-block mt-2 font-mono text-[14px] text-red-700 perimeter-underline"
                   >
                     {PHONE_DISPLAY}
                   </a>
@@ -65,7 +65,7 @@ export default function LocationsPage() {
               </div>
               {/* TODO: replace with a real Google Maps embed per office */}
               <div
-                className={`perimeter-line rounded-lg bg-pine-100/40 min-h-[260px] grid place-items-center ${
+                className={`perimeter-line rounded-lg bg-paper-200/40 min-h-[260px] grid place-items-center ${
                   i % 2 === 1 ? "lg:order-1" : ""
                 }`}
                 role="img"
@@ -74,7 +74,7 @@ export default function LocationsPage() {
                 <div className="text-center">
                   <svg
                     viewBox="0 0 24 24"
-                    className="w-10 h-10 mx-auto text-pine-600"
+                    className="w-10 h-10 mx-auto text-red-600"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.8"
@@ -85,7 +85,7 @@ export default function LocationsPage() {
                     <path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z" />
                     <circle cx="12" cy="10" r="2.6" />
                   </svg>
-                  <p className="font-mono text-[12px] tracking-[0.14em] uppercase text-pine-800 mt-3">
+                  <p className="font-mono text-[12px] tracking-[0.14em] uppercase text-red-700 mt-3">
                     Map — {l.addressLocality}, UT
                   </p>
                 </div>
@@ -95,7 +95,7 @@ export default function LocationsPage() {
         </div>
       </section>
 
-      <section className="bg-sand-200 border-y border-[#E4D9C3] py-24 max-md:py-[68px]">
+      <section className="bg-paper-200 border-y border-[#E0E0E0] py-24 max-md:py-[68px]">
         <div className="max-w-wrap mx-auto px-8">
           <SectionHeader eyebrow="Coverage" title="Serving 13 Utah counties.">
             Wherever you are along the line, the same guarantee applies: if
@@ -105,7 +105,7 @@ export default function LocationsPage() {
             {COUNTIES_SERVED.map((county) => (
               <li
                 key={county}
-                className="bg-sand-50 border border-[#E4D9C3] rounded-pill px-5 py-2 font-mono text-[12.5px] tracking-[0.1em] uppercase text-pine-800"
+                className="bg-paper-50 border border-[#E0E0E0] rounded-pill px-5 py-2 font-mono text-[12.5px] tracking-[0.1em] uppercase text-red-700"
               >
                 {county}
               </li>

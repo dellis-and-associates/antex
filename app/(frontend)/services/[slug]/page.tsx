@@ -35,7 +35,7 @@ export default async function ServicePage({ params }: Props) {
   return (
     <>
       {/* hero */}
-      <header className="bg-gradient-to-b from-sand-50 to-[#F4EEE1] pt-16 pb-16">
+      <header className="bg-gradient-to-b from-paper-50 to-[#F4EEE1] pt-16 pb-16">
         <div className="max-w-wrap mx-auto px-8 grid lg:grid-cols-[1.2fr_.8fr] gap-16 items-center">
           <div>
             <Eyebrow>{service.heroEyebrow}</Eyebrow>
@@ -52,7 +52,7 @@ export default async function ServicePage({ params }: Props) {
           </div>
           <div className="max-lg:hidden">
             <PerimeterFrame className="grid place-items-center py-16">
-              <div className="w-[120px] h-[120px] rounded-[28px] bg-pine-100 grid place-items-center text-pine-800">
+              <div className="w-[120px] h-[120px] rounded-[28px] bg-red-50 grid place-items-center text-red-700">
                 <ServiceIcon name={service.icon} className="w-16 h-16" />
               </div>
             </PerimeterFrame>
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: Props) {
             {service.whatWeDo.map((item) => (
               <article
                 key={item.title}
-                className="bg-white border border-sand-200 rounded-lg px-7 py-[26px]"
+                className="bg-white border border-paper-200 rounded-lg px-7 py-[26px]"
               >
                 <h3 className="font-body font-semibold text-[19px] text-ink-950 mb-2">
                   {item.title}
@@ -83,7 +83,7 @@ export default async function ServicePage({ params }: Props) {
       </section>
 
       {/* process applied to this pest */}
-      <section className="bg-pine-800 text-sand-50 py-24 max-md:py-[68px]">
+      <section className="bg-ink-900 text-paper-50 py-24 max-md:py-[68px]">
         <div className="max-w-wrap mx-auto px-8">
           <SectionHeader
             eyebrow="How it works"
@@ -111,13 +111,13 @@ export default async function ServicePage({ params }: Props) {
             {service.faqs.map((faq) => (
               <details
                 key={faq.q}
-                className="group bg-white border border-sand-200 rounded-md px-6 py-1 open:pb-5"
+                className="group bg-white border border-paper-200 rounded-md px-6 py-1 open:pb-5"
               >
                 <summary className="cursor-pointer list-none flex items-center justify-between gap-4 py-4 font-semibold text-ink-950">
                   {faq.q}
                   <span
                     aria-hidden="true"
-                    className="text-pine-600 transition-transform duration-150 group-open:rotate-45 text-[22px] leading-none"
+                    className="text-red-600 transition-transform duration-150 group-open:rotate-45 text-[22px] leading-none"
                   >
                     +
                   </span>
@@ -126,7 +126,7 @@ export default async function ServicePage({ params }: Props) {
               </details>
             ))}
           </div>
-          <p className="mt-8 text-[14.5px] font-mono text-pine-800">
+          <p className="mt-8 text-[14.5px] font-mono text-red-700">
             Our guarantee: {GUARANTEE_VERBATIM}
           </p>
         </div>

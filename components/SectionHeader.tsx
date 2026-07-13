@@ -27,7 +27,7 @@ export function SectionHeader({
         {title}
       </Heading>
       {children ? (
-        <p className={tone === "dark" ? "text-pine-100" : undefined}>{children}</p>
+        <p className={tone === "dark" ? "text-paper-200" : undefined}>{children}</p>
       ) : null}
     </div>
   );

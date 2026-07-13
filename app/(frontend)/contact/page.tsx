@@ -31,23 +31,23 @@ export default function ContactPage() {
           </p>
           <a
             href={PHONE_TEL}
-            className="inline-block mt-6 font-mono text-[17px] text-pine-800 perimeter-underline"
+            className="inline-block mt-6 font-mono text-[17px] text-red-700 perimeter-underline"
           >
             Prefer to talk? {PHONE_DISPLAY}
           </a>
 
           <ul className="mt-10 grid gap-4 list-none text-[15.5px]">
             <li className="flex gap-3">
-              <CheckIcon className="flex-none w-5 h-5 text-pine-600 mt-1" />
+              <CheckIcon className="flex-none w-5 h-5 text-red-600 mt-1" />
               <span>{GUARANTEE_VERBATIM}</span>
             </li>
             <li className="flex gap-3">
-              <CheckIcon className="flex-none w-5 h-5 text-pine-600 mt-1" />
+              <CheckIcon className="flex-none w-5 h-5 text-red-600 mt-1" />
               <span>{EPA_CLAIM_VERBATIM}</span>
             </li>
           </ul>
 
-          <div className="mt-10 border-t border-dashed border-[rgba(31,106,71,0.45)] pt-8 grid gap-3 text-[14.5px]">
+          <div className="mt-10 border-t border-dashed border-[rgba(228,52,43,0.45)] pt-8 grid gap-3 text-[14.5px]">
             {LOCATIONS.map((l) => (
               <p key={l.slug}>
                 <strong className="text-ink-950">{l.city}</strong> —{" "}
@@ -57,7 +57,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="bg-sand-200/60 border border-sand-200 rounded-lg p-8 max-sm:p-5">
+        <div className="bg-paper-200/60 border border-paper-200 rounded-lg p-8 max-sm:p-5">
           <ContactForm />
         </div>
       </div>

@@ -1,20 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { Button as UIButton } from "@/components/ui/button";
 
+/** Brand-facing wrapper around the shadcn/ui button (components/ui/button.tsx).
+ *  Variant names predate the migration: "primary" maps to the shadcn default. */
 type ButtonVariant = "primary" | "secondary" | "ghost-dark" | "dark";
-
-const styles: Record<ButtonVariant, string> = {
-  primary:
-    "bg-clay-600 text-white shadow-cta hover:bg-clay-700 hover:-translate-y-px",
-  secondary:
-    "border-[1.5px] border-pine-600 text-pine-600 bg-transparent hover:bg-pine-100",
-  "ghost-dark":
-    "border-[1.5px] border-sand-50/60 text-white bg-transparent hover:border-white hover:bg-white/[.08]",
-  dark: "bg-ink-950 text-white hover:bg-black",
-};
-
-const base =
-  "inline-flex items-center gap-[10px] font-body font-semibold text-[15.5px] px-[28px] py-[15px] rounded-[10px] transition-[transform,background-color,box-shadow] duration-150 cursor-pointer border-0";
 
 export function Button({
   href,
@@ -31,17 +21,22 @@ export function Button({
   disabled?: boolean;
   className?: string;
 }) {
-  const cls = `${base} ${styles[variant]} ${className}`;
+  const uiVariant = variant === "primary" ? "default" : variant;
   if (href) {
     return (
-      <Link href={href} className={cls}>
-        {children}
-      </Link>
+      <UIButton asChild variant={uiVariant} className={className}>
+        <Link href={href}>{children}</Link>
+      </UIButton>
     );
   }
   return (
-    <button type={type ?? "button"} disabled={disabled} className={`${cls} disabled:opacity-60 disabled:hover:translate-y-0`}>
+    <UIButton
+      type={type ?? "button"}
+      variant={uiVariant}
+      disabled={disabled}
+      className={className}
+    >
       {children}
-    </button>
+    </UIButton>
   );
 }

@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     media: Media;
     posts: Post;
+    pages: Page;
     'contact-submissions': ContactSubmission;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -81,6 +82,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
+    pages: PagesSelect<false> | PagesSelect<true>;
     'contact-submissions': ContactSubmissionsSelect<false> | ContactSubmissionsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -192,7 +194,7 @@ export interface Post {
   id: number;
   title: string;
   /**
-   * URL path: /blog/<slug> — lowercase, hyphenated
+   * URL path: /blog/<slug> (lowercase, hyphenated)
    */
   slug: string;
   /**
@@ -220,6 +222,68 @@ export interface Post {
     };
     [k: string]: unknown;
   };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages".
+ */
+export interface Page {
+  id: number;
+  title: string;
+  /**
+   * Relative URL, e.g. /service-areas/salt-lake-county
+   */
+  path: string;
+  /**
+   * Absolute URL on antexpestsolutions.com
+   */
+  fullUrl: string;
+  /**
+   * Last path segment (the /[slug] part). Empty for the homepage.
+   */
+  slug?: string | null;
+  section?: string | null;
+  /**
+   * Home, Core Page, Service Page, County Hub, City Hub, City Service Page, Pest Detail Page, …
+   */
+  pageType?: string | null;
+  /**
+   * Parent URL from the workbook (breadcrumb parent)
+   */
+  parentPath?: string | null;
+  county?: string | null;
+  city?: string | null;
+  /**
+   * Service or pest this page targets, if any
+   */
+  servicePest?: string | null;
+  status: 'Build' | 'Live';
+  /**
+   * SEO meta description (~150 chars)
+   */
+  metaDescription?: string | null;
+  heroHeadline?: string | null;
+  heroSub?: string | null;
+  /**
+   * Opening paragraph under the hero
+   */
+  intro?: string | null;
+  sections?:
+    | {
+        heading: string;
+        body: string;
+        id?: string | null;
+      }[]
+    | null;
+  faqs?:
+    | {
+        question: string;
+        answer: string;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -282,6 +346,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'posts';
         value: number | Post;
+      } | null)
+    | ({
+        relationTo: 'pages';
+        value: number | Page;
       } | null)
     | ({
         relationTo: 'contact-submissions';
@@ -406,6 +474,43 @@ export interface PostsSelect<T extends boolean = true> {
   summary?: T;
   heroImage?: T;
   content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "pages_select".
+ */
+export interface PagesSelect<T extends boolean = true> {
+  title?: T;
+  path?: T;
+  fullUrl?: T;
+  slug?: T;
+  section?: T;
+  pageType?: T;
+  parentPath?: T;
+  county?: T;
+  city?: T;
+  servicePest?: T;
+  status?: T;
+  metaDescription?: T;
+  heroHeadline?: T;
+  heroSub?: T;
+  intro?: T;
+  sections?:
+    | T
+    | {
+        heading?: T;
+        body?: T;
+        id?: T;
+      };
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

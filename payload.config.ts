@@ -9,6 +9,7 @@ import sharp from "sharp";
 import { Users } from "./collections/Users";
 import { Media } from "./collections/Media";
 import { Posts } from "./collections/Posts";
+import { Pages } from "./collections/Pages";
 import { ContactSubmissions } from "./collections/ContactSubmissions";
 
 const filename = fileURLToPath(import.meta.url);
@@ -29,7 +30,7 @@ export default buildConfig({
     importMap: { baseDir: path.resolve(dirname) },
     meta: { titleSuffix: "— Antex Pest Solutions" },
   },
-  collections: [Users, Media, Posts, ContactSubmissions],
+  collections: [Users, Media, Posts, Pages, ContactSubmissions],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || "insecure-dev-secret-set-PAYLOAD_SECRET",
   typescript: { outputFile: path.resolve(dirname, "payload-types.ts") },

@@ -9,6 +9,9 @@ export const SITE_URL = "https://antexpestsolutions.com";
 export const PHONE_DISPLAY = "(435) 313-5882";
 export const PHONE_TEL = "tel:4353135882";
 
+export const EMAIL = "info@antexpestsolutions.com";
+export const EMAIL_MAILTO = "mailto:info@antexpestsolutions.com";
+
 export const CUSTOMER_LOGIN_URL = "https://antex.pestportals.com/landing/index";
 
 export const FOUNDED_YEAR = 2014;

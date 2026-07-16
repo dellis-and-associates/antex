@@ -53,6 +53,11 @@ export function Footer() {
                 Contact us
               </Link>
             </li>
+            <li>
+              <Link href="/sitemap" className="hover:text-white hover:underline">
+                Site directory
+              </Link>
+            </li>
           </FooterCol>
 
           <FooterCol title="Locations">

@@ -53,3 +53,4 @@ every 10 minutes.
 - CRM webhook forwarding for leads (GoHighLevel/LeadConnector) — see
   `app/api/contact/route.ts`
 - Map embeds on the locations page
+

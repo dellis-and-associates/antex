@@ -37,9 +37,9 @@ Rule of thumb: ~60% paper/white, ~30% ink, ~10% red. Red is loud — scarcity ke
 
 ## 3 · Typography
 
-- **Display — Bricolage Grotesque 700/800.** Headlines and the wordmark. Confident, slightly characterful, unmistakably not a template.
+- **Display — Plus Jakarta Sans 700/800.** Headlines and the wordmark. Clean, modern and confident.
 - **Body — Archivo 400/500/600.** Everything readable: paragraphs, UI, buttons.
-- **Utility — Space Mono.** Eyebrows, phone numbers, data labels. Always uppercase with +8% (0.16em) tracking — the "inspection report" voice.
+- **Utility — Archivo 600.** Eyebrows, phone numbers, data labels. Always uppercase with +8% (0.16em) tracking — the "inspection report" voice.
 
 Scale: Display 64/66 · H2 40/46 · H3 24/32 · Body 17/28 · Small 14/22 · Eyebrow 13.
 
@@ -49,10 +49,10 @@ A 1.5px dashed line (`dash 5 / gap 7`, round caps, Antex Red at 40% opacity on l
 
 ## 5 · Voice
 
-Plain verbs, homeowner's vocabulary, specific over clever. Buttons say exactly what happens: "Book a free inspection", not "Get started". The guarantee is stated as a promise, not marketing: *"Pests return? So do we — free."*
+Plain verbs, homeowner's vocabulary, specific over clever. Buttons say exactly what happens: "Book a free inspection", not "Get started". The guarantee is stated as a promise, not marketing: *"Pests return? So do we. Free."* (No em dashes anywhere in site copy — client preference.)
 
 ## 6 · Getting this into Figma
 
 1. **Tokens** → install the *Tokens Studio* plugin in Figma → import `design-tokens.json` → "Create styles & variables". You get the full color/type/space/radius system as Figma Variables.
 2. **Logos** → drag `public/logo.webp` / `public/logo-reversed.webp` onto the canvas.
-3. Fonts: enable **Bricolage Grotesque**, **Archivo**, **Space Mono** (all free Google Fonts, available in Figma's font picker).
+3. Fonts: enable **Plus Jakarta Sans** and **Archivo** (both free Google Fonts, available in Figma's font picker).

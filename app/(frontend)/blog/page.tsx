@@ -5,9 +5,9 @@ import { CTABand } from "@/components/CTABand";
 import { getAllPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
-  title: "Blog — Utah Pest Control Field Notes",
+  title: "Blog | Utah Pest Control Field Notes",
   description:
-    "Field notes from Antex technicians: rodents, box elder bugs and the pest pressure Utah homeowners actually face — St George to the Wasatch Front.",
+    "Field notes from Antex technicians: rodents, box elder bugs and the pest pressure Utah homeowners actually face, from St George to the Wasatch Front.",
 };
 
 // Revalidate so posts published in the CMS appear without a redeploy.
@@ -25,7 +25,7 @@ export default async function BlogPage() {
             What Utah&apos;s pests are doing right now.
           </h1>
           <p className="text-[19px] max-w-[52ch]">
-            Written by the technicians who inspect these homes every day — no
+            Written by the technicians who inspect these homes every day. No
             scare tactics, just what we&apos;re seeing on the line and what to
             do about it.
           </p>
@@ -70,7 +70,7 @@ export default async function BlogPage() {
       <CTABand
         eyebrow="Seen something similar?"
         title="Ask a technician, not a search bar."
-        copy="Describe what you're finding and we'll tell you what it likely is — and inspect for free if it needs a closer look."
+        copy="Describe what you're finding and we'll tell you what it likely is, and inspect for free if it needs a closer look."
       />
     </>
   );

@@ -9,7 +9,7 @@ import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 export function CTABand({
   eyebrow = "Free inspections",
   title,
-  copy = "Tell us what you're seeing — a member of our team will be in touch shortly to schedule your visit.",
+  copy = "Tell us what you're seeing and a member of our team will be in touch shortly to schedule your visit.",
 }: {
   eyebrow?: string;
   title: string;

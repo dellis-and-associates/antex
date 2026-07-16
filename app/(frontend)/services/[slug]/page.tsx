@@ -90,7 +90,7 @@ export default async function ServicePage({ params }: Props) {
             title="Inspect. Treat. Protect."
             tone="dark"
           >
-            The same disciplined sequence behind every Antex service — applied
+            The same disciplined sequence behind every Antex service, applied
             to {service.name.toLowerCase()}.
           </SectionHeader>
           <Steps>

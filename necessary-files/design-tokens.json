@@ -18,9 +18,9 @@
     "white": { "value": "#FFFFFF", "type": "color" }
   },
   "font": {
-    "display": { "value": "Bricolage Grotesque", "type": "fontFamilies", "description": "Headlines & wordmark. Weights: 700, 800." },
+    "display": { "value": "Plus Jakarta Sans", "type": "fontFamilies", "description": "Headlines & wordmark. Weights: 700, 800." },
     "body": { "value": "Archivo", "type": "fontFamilies", "description": "Body, UI, buttons. Weights: 400, 500, 600." },
-    "utility": { "value": "Space Mono", "type": "fontFamilies", "description": "Eyebrows, data labels, phone numbers. Uppercase, +8% tracking." }
+    "utility": { "value": "Archivo", "type": "fontFamilies", "description": "Eyebrows, data labels, phone numbers. Semibold, uppercase, +8% tracking." }
   },
   "typeScale": {
     "display": { "value": { "fontFamily": "{font.display}", "fontWeight": "800", "fontSize": "64", "lineHeight": "66" }, "type": "typography" },

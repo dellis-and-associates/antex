@@ -19,7 +19,7 @@ export const GUARANTEE_VERBATIM =
   "If pests return between scheduled visits, we'll come back and address the issue at no additional cost.";
 
 /** Brand-voice phrasing of the same promise (BRAND-GUIDE.md §5). */
-export const GUARANTEE_SHORT = "Pests return? So do we — free.";
+export const GUARANTEE_SHORT = "Pests return? So do we. Free.";
 
 /** Verbatim from the live site — EPA / safety claim. */
 export const EPA_CLAIM_VERBATIM =

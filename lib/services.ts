@@ -29,15 +29,15 @@ export const SERVICES: Service[] = [
     name: "Ants & general pests",
     shortName: "Ants & general pests",
     icon: "ant",
-    card: "Local ant species, roaches, earwigs and crawling insects — treated at the colony, not just the trail.",
+    card: "Local ant species, roaches, earwigs and crawling insects, treated at the colony, not just the trail.",
     heroEyebrow: "Ants · Roaches · Earwigs · Crawling insects",
     heroTitle: "Ant control that treats the colony, not the trail.",
     heroLead:
-      "Wiping up a trail kills the ants you can see. The colony sends more. We identify the species, trace it to the nest and treat the source — then hold the perimeter so they don't come back.",
+      "Wiping up a trail kills the ants you can see. The colony sends more. We identify the species, trace it to the nest and treat the source, then hold the perimeter so they don't come back.",
     whatWeDo: [
       {
         title: "Species identification",
-        copy: "Utah's common invaders — pavement ants, harvester ants, roaches, earwigs, box elder bugs — each need a different approach. Treatment starts with knowing exactly what you have.",
+        copy: "Utah's common invaders, from pavement ants and harvester ants to roaches, earwigs and box elder bugs, each need a different approach. Treatment starts with knowing exactly what you have.",
       },
       {
         title: "Colony-level treatment",
@@ -49,7 +49,7 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Yard treatments on request",
-        copy: "We also treat yards for ticks, fleas and mosquitoes — ask about seasonal outdoor plans when you book.",
+        copy: "We also treat yards for ticks, fleas and mosquitoes. Ask about seasonal outdoor plans when you book.",
       },
     ],
     steps: [
@@ -69,7 +69,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "Why do the ants keep coming back after I spray?",
-        a: "Store-bought sprays kill foraging workers but rarely reach the colony — and some species react by splitting into multiple colonies, making the problem worse. Colony-level baiting eliminates the source instead of the symptom.",
+        a: "Store-bought sprays kill foraging workers but rarely reach the colony, and some species react by splitting into multiple colonies, making the problem worse. Colony-level baiting eliminates the source instead of the symptom.",
       },
       {
         q: "Are the treatments safe for my kids and pets?",
@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "How long does a treatment take to work?",
-        a: "You'll usually see a sharp drop in activity within days. Baits need a little time to circulate through the colony — that delay is what makes them effective at the source.",
+        a: "You'll usually see a sharp drop in activity within days. Baits need a little time to circulate through the colony. That delay is what makes them effective at the source.",
       },
       {
         q: "Do I need to do anything before you arrive?",
@@ -85,7 +85,7 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Do you handle other crawling insects too?",
-        a: "Yes — roaches, earwigs, box elder bugs and other general pests are covered under the same inspect-treat-protect service, along with optional yard treatments for ticks, fleas and mosquitoes.",
+        a: "Yes. Roaches, earwigs, box elder bugs and other general pests are covered under the same inspect-treat-protect service, along with optional yard treatments for ticks, fleas and mosquitoes.",
       },
     ],
     ctaTitle: "Seeing trails? Get a free inspection this week.",
@@ -98,11 +98,11 @@ export const SERVICES: Service[] = [
     name: "Rodents & mice",
     shortName: "Rodents & mice",
     icon: "rodent",
-    card: "It's rodent season in Utah. Exclusion, trapping and entry-point sealing — free inspections available now.",
+    card: "It's rodent season in Utah. Exclusion, trapping and entry-point sealing. Free inspections available now.",
     heroEyebrow: "Mice · Roof rats · Exclusion",
     heroTitle: "Rodent control that seals the way in.",
     heroLead:
-      "Trapping alone treats the symptom. Mice and roof rats get in through gaps smaller than an inch — so we find every entry point, seal it, and remove what's already inside.",
+      "Trapping alone treats the symptom. Mice and roof rats get in through gaps smaller than an inch, so we find every entry point, seal it, and remove what's already inside.",
     whatWeDo: [
       {
         title: "Full-property inspection",
@@ -110,7 +110,7 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Entry-point exclusion",
-        copy: "We seal the gaps, vents, rooflines and utility penetrations rodents actually use — the step that makes results last.",
+        copy: "We seal the gaps, vents, rooflines and utility penetrations rodents actually use. That's the step that makes results last.",
       },
       {
         title: "Trapping & removal",
@@ -118,13 +118,13 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Wildlife control",
-        copy: "Larger animals on the property? We also provide humane wildlife removal and exclusion — ask when you book.",
+        copy: "Larger animals on the property? We also provide humane wildlife removal and exclusion. Ask when you book.",
       },
     ],
     steps: [
       {
         title: "Inspect",
-        copy: "We walk the full structure — roofline, foundation, garage, attic — and map every gap, droppings site and runway.",
+        copy: "We walk the full structure, from roofline to foundation, garage and attic, and map every gap, droppings site and runway.",
       },
       {
         title: "Treat",
@@ -132,21 +132,21 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Protect",
-        copy: "Follow-ups confirm the structure stays sealed through the seasonal surge. Activity returns between visits? So do we — free.",
+        copy: "Follow-ups confirm the structure stays sealed through the seasonal surge. Activity returns between visits? So do we, free.",
       },
     ],
     faqs: [
       {
         q: "I hear scratching in the walls at night. Is it mice?",
-        a: "Very likely mice or roof rats — both are nocturnal and travel through wall voids and attics. Nighttime scratching is one of the most common first signs, and it's worth an inspection before nesting and gnawing damage spread.",
+        a: "Very likely mice or roof rats. Both are nocturnal and travel through wall voids and attics. Nighttime scratching is one of the most common first signs, and it's worth an inspection before nesting and gnawing damage spread.",
       },
       {
         q: "Why are roof rats such a problem in St George?",
-        a: "Roof rat pressure has been rising across Washington County neighborhoods. They climb, they enter high along rooflines, and they exploit gaps under an inch wide — which is why exclusion matters more than traps alone.",
+        a: "Roof rat pressure has been rising across Washington County neighborhoods. They climb, they enter high along rooflines, and they exploit gaps under an inch wide, which is why exclusion matters more than traps alone.",
       },
       {
         q: "When is rodent season in Utah?",
-        a: "Pressure spikes in fall and winter as temperatures drop and rodents move indoors, but established infestations persist year-round. The best time to seal a house is before the cold snap — the second-best time is now.",
+        a: "Pressure spikes in fall and winter as temperatures drop and rodents move indoors, but established infestations persist year-round. The best time to seal a house is before the cold snap. The second-best time is now.",
       },
       {
         q: "Do you just set traps, or actually fix the problem?",
@@ -154,11 +154,11 @@ export const SERVICES: Service[] = [
       },
       {
         q: "What about squirrels, raccoons or other wildlife?",
-        a: "We provide humane wildlife removal and exclusion as well — protecting your property while handling animals legally and safely.",
+        a: "We provide humane wildlife removal and exclusion as well, protecting your property while handling animals legally and safely.",
       },
     ],
     ctaTitle: "It's rodent season. Book a free inspection now.",
-    metaTitle: "Rodent & Mice Exterminator — Exclusion & Removal | Antex Pest Solutions",
+    metaTitle: "Rodent & Mice Exterminator - Exclusion & Removal | Antex Pest Solutions",
     metaDescription:
       "Rodent control in St George, Vernal & Northern Utah: inspection, trapping and entry-point exclusion that lasts. Free inspections during rodent season. Call (435) 313-5882.",
   },
@@ -167,7 +167,7 @@ export const SERVICES: Service[] = [
     name: "Termites",
     shortName: "Termites",
     icon: "termite",
-    card: "Inspections, treatment and monitoring that protect the structure itself — before damage compounds.",
+    card: "Inspections, treatment and monitoring that protect the structure itself, before damage compounds.",
     heroEyebrow: "Termites · Wood-destroying insects",
     heroTitle: "Termite protection for the structure itself.",
     heroLead:
@@ -175,7 +175,7 @@ export const SERVICES: Service[] = [
     whatWeDo: [
       {
         title: "Wood-destroying insect inspections",
-        copy: "Thorough WDI inspections that catch mud tubes, damaged wood, moisture conditions and other early signs — with detailed documentation, including for real-estate transactions.",
+        copy: "Thorough WDI inspections that catch mud tubes, damaged wood, moisture conditions and other early signs, with detailed documentation, including for real-estate transactions.",
       },
       {
         title: "Targeted treatment",
@@ -183,11 +183,11 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Prevention & monitoring",
-        copy: "We assess the conditions that invite termites — moisture, soil contact, wood debris — and monitor the property so new activity is caught before damage spreads.",
+        copy: "We assess the conditions that invite termites, like moisture, soil contact and wood debris, and monitor the property so new activity is caught before damage spreads.",
       },
       {
         title: "Service warranties",
-        copy: "Wood-destroying insect plans include service warranties with follow-up treatments — ask for details when you book.",
+        copy: "Wood-destroying insect plans include service warranties with follow-up treatments. Ask for details when you book.",
       },
     ],
     steps: [
@@ -197,21 +197,21 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Treat",
-        copy: "Targeted termiticide application where colonies are active — protecting the structure without blanket-spraying the property.",
+        copy: "Targeted termiticide application where colonies are active, protecting the structure without blanket-spraying the property.",
       },
       {
         title: "Protect",
-        copy: "Ongoing monitoring catches new activity early, and we correct the conditions — moisture, soil, debris — that invite reinfestation.",
+        copy: "Ongoing monitoring catches new activity early, and we correct the moisture, soil and debris conditions that invite reinfestation.",
       },
     ],
     faqs: [
       {
         q: "How do I know if I have termites?",
-        a: "Common signs include mud tubes on foundation walls, hollow-sounding or blistered wood, discarded wings near windows, and sagging floors. Many infestations show no visible signs at all — which is why periodic professional inspection matters.",
+        a: "Common signs include mud tubes on foundation walls, hollow-sounding or blistered wood, discarded wings near windows, and sagging floors. Many infestations show no visible signs at all, which is why periodic professional inspection matters.",
       },
       {
         q: "Are termites really a risk in Utah?",
-        a: "Yes — subterranean termites are active across Utah, and risk varies by neighborhood, soil and building style. Local inspection experience matters more than a national checklist.",
+        a: "Yes. Subterranean termites are active across Utah, and risk varies by neighborhood, soil and building style. Local inspection experience matters more than a national checklist.",
       },
       {
         q: "Do you do termite inspections for home sales?",
@@ -228,7 +228,7 @@ export const SERVICES: Service[] = [
       },
     ],
     ctaTitle: "Protect the structure. Book a termite inspection.",
-    metaTitle: "Termite Inspection & Treatment | Antex Pest Solutions — Utah",
+    metaTitle: "Termite Inspection & Treatment | Antex Pest Solutions - Utah",
     metaDescription:
       "Termite and wood-destroying insect inspections, treatment and monitoring in St George, Vernal & Northern Utah. Detailed WDI documentation. Call (435) 313-5882.",
   },
@@ -237,7 +237,7 @@ export const SERVICES: Service[] = [
     name: "Wasps & stinging insects",
     shortName: "Stinging insects",
     icon: "wasp",
-    card: "Fast, safe removal of wasps, hornets and yellowjackets — priority scheduling for active nests.",
+    card: "Fast, safe removal of wasps, hornets and yellowjackets, with priority scheduling for active nests.",
     heroEyebrow: "Wasps · Hornets · Yellowjackets",
     heroTitle: "Active nest? We prioritize stinging insects.",
     heroLead:
@@ -245,11 +245,11 @@ export const SERVICES: Service[] = [
     whatWeDo: [
       {
         title: "Priority scheduling",
-        copy: "Active nests near doors, play areas or work areas get moved to the front of the schedule — typically within days, not weeks.",
+        copy: "Active nests near doors, play areas or work areas get moved to the front of the schedule, typically within days, not weeks.",
       },
       {
         title: "Safe nest removal",
-        copy: "Proper equipment and technique to remove nests from eaves, wall voids, ground burrows and trees — without sending an agitated colony into your yard.",
+        copy: "Proper equipment and technique to remove nests from eaves, wall voids, ground burrows and trees, without sending an agitated colony into your yard.",
       },
       {
         title: "Rebuild prevention",
@@ -259,7 +259,7 @@ export const SERVICES: Service[] = [
     steps: [
       {
         title: "Inspect",
-        copy: "We locate every nest on the property — visible ones and the hidden colonies in wall voids, ground burrows and eaves.",
+        copy: "We locate every nest on the property: visible ones and the hidden colonies in wall voids, ground burrows and eaves.",
       },
       {
         title: "Treat",
@@ -277,11 +277,11 @@ export const SERVICES: Service[] = [
       },
       {
         q: "How quickly can you get here?",
-        a: "Stinging-insect calls get priority scheduling — for active nests we're typically out within days. Tell us when you call if anyone in the household is allergic.",
+        a: "Stinging-insect calls get priority scheduling. For active nests we're typically out within days. Tell us when you call if anyone in the household is allergic.",
       },
       {
         q: "What's the difference between wasps, hornets and yellowjackets?",
-        a: "Hornets and yellowjackets are both types of wasps — yellowjackets often nest in the ground or wall voids, hornets in aerial paper nests. The distinction matters because nest location changes how removal has to be done.",
+        a: "Hornets and yellowjackets are both types of wasps. Yellowjackets often nest in the ground or wall voids, hornets in aerial paper nests. The distinction matters because nest location changes how removal has to be done.",
       },
       {
         q: "Will they just come back next year?",
@@ -302,11 +302,11 @@ export const SERVICES: Service[] = [
     heroEyebrow: "Spiders · Scorpions · Desert pests",
     heroTitle: "Built for the desert's year-round arachnid pressure.",
     heroLead:
-      "St George's climate doesn't give spiders and scorpions an off-season. Our barrier treatments are tuned to red-rock country — where they harbor, how they hunt, and the entry points they actually use.",
+      "St George's climate doesn't give spiders and scorpions an off-season. Our barrier treatments are tuned to red-rock country: where they harbor, how they hunt, and the entry points they actually use.",
     whatWeDo: [
       {
         title: "Harborage inspection",
-        copy: "Block walls, rock landscaping, expansion joints, weep holes — we check the places desert arachnids actually live, not just the baseboards.",
+        copy: "Block walls, rock landscaping, expansion joints, weep holes: we check the places desert arachnids actually live, not just the baseboards.",
       },
       {
         title: "Exterior barrier treatment",
@@ -320,7 +320,7 @@ export const SERVICES: Service[] = [
     steps: [
       {
         title: "Inspect",
-        copy: "We identify the species — including black widows and bark scorpions — and map harborage in walls, landscaping and structures.",
+        copy: "We identify the species, including black widows and bark scorpions, and map harborage in walls, landscaping and structures.",
       },
       {
         title: "Treat",
@@ -334,7 +334,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "Are scorpions in St George dangerous?",
-        a: "Most Utah scorpion stings are painful rather than dangerous, but the Arizona bark scorpion — found in the St George area — deserves respect, especially around kids and older adults. Either way, you don't want them in the house.",
+        a: "Most Utah scorpion stings are painful rather than dangerous, but the Arizona bark scorpion, found in the St George area, deserves respect, especially around kids and older adults. Either way, you don't want them in the house.",
       },
       {
         q: "Why do I keep finding scorpions inside?",
@@ -342,15 +342,15 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Do you treat for black widows?",
-        a: "Yes. Widows favor undisturbed corners — garages, meters, block-wall voids, patio furniture. We treat the harborage directly and maintain the perimeter so they don't re-establish.",
+        a: "Yes. Widows favor undisturbed corners: garages, meters, block-wall voids, patio furniture. We treat the harborage directly and maintain the perimeter so they don't re-establish.",
       },
       {
         q: "Is one treatment enough?",
-        a: "In the desert, no — arachnid pressure here is year-round, and any barrier weathers over time. Scheduled maintenance keeps the line held, and our guarantee covers anything that crosses it between visits.",
+        a: "In the desert, no. Arachnid pressure here is year-round, and any barrier weathers over time. Scheduled maintenance keeps the line held, and our guarantee covers anything that crosses it between visits.",
       },
     ],
     ctaTitle: "Hold the line against desert pests.",
-    metaTitle: "Spider & Scorpion Control — St George, Utah | Antex Pest Solutions",
+    metaTitle: "Spider & Scorpion Control in St George, Utah | Antex Pest Solutions",
     metaDescription:
       "Spider and scorpion barrier treatments tuned to Utah's desert climate. Black widow and bark scorpion specialists in St George. Call (435) 313-5882.",
   },
@@ -363,7 +363,7 @@ export const SERVICES: Service[] = [
     heroEyebrow: "Restaurants · Offices · Healthcare · Facilities",
     heroTitle: "Documented pest management your auditor will like.",
     heroLead:
-      "Commercial pest control is a compliance function, not just a spray. We run documented, inspection-driven programs for restaurants, warehouses, offices, hotels and healthcare facilities — scheduled around your business hours.",
+      "Commercial pest control is a compliance function, not just a spray. We run documented, inspection-driven programs for restaurants, warehouses, offices, hotels and healthcare facilities, scheduled around your business hours.",
     whatWeDo: [
       {
         title: "Integrated Pest Management",
@@ -371,7 +371,7 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Detailed documentation",
-        copy: "Service reports, activity logs and treatment records kept audit-ready — for health inspections, AIB-style audits and corporate compliance.",
+        copy: "Service reports, activity logs and treatment records kept audit-ready for health inspections, AIB-style audits and corporate compliance.",
       },
       {
         title: "Flexible scheduling",
@@ -379,7 +379,7 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Sensitive-environment approved",
-        copy: "Products and methods approved for hospitals, pet facilities and daycare centers — environments where the margin for error is zero.",
+        copy: "Products and methods approved for hospitals, pet facilities and daycare centers: environments where the margin for error is zero.",
       },
     ],
     steps: [
@@ -389,7 +389,7 @@ export const SERVICES: Service[] = [
       },
       {
         title: "Treat",
-        copy: "Targeted IPM interventions — exclusion, monitoring stations and precise product use — scheduled outside your business hours.",
+        copy: "Targeted IPM interventions, from exclusion and monitoring stations to precise product use, scheduled outside your business hours.",
       },
       {
         title: "Protect",
@@ -399,7 +399,7 @@ export const SERVICES: Service[] = [
     faqs: [
       {
         q: "Which industries do you serve?",
-        a: "Restaurants, warehouses, offices, hotels, healthcare facilities, pet facilities and daycare centers — anywhere pest activity threatens compliance, reputation or health.",
+        a: "Restaurants, warehouses, offices, hotels, healthcare facilities, pet facilities and daycare centers, and anywhere else pest activity threatens compliance, reputation or health.",
       },
       {
         q: "Can you service us outside business hours?",
@@ -415,11 +415,11 @@ export const SERVICES: Service[] = [
       },
       {
         q: "Do you handle multi-site accounts?",
-        a: "Yes — with offices in St George, Vernal and American Fork, we cover facilities across Utah's 13 most-populated counties under one documented program.",
+        a: "Yes. With offices in St George, Vernal and American Fork, we cover facilities across Utah's 13 most-populated counties under one documented program.",
       },
     ],
     ctaTitle: "Get a documented program for your facility.",
-    metaTitle: "Commercial Pest Control & IPM Programs — Utah | Antex Pest Solutions",
+    metaTitle: "Commercial Pest Control & IPM Programs in Utah | Antex Pest Solutions",
     metaDescription:
       "Documented commercial pest management for restaurants, offices, hospitals and facilities across Utah. IPM programs, audit-ready records, after-hours service. Call (435) 313-5882.",
   },
@@ -431,5 +431,5 @@ export function getService(slug: string): Service | undefined {
 
 /** Shared FAQ answer sourced from the live site's EPA/safety claim. */
 function EPA_SAFETY_ANSWER(): string {
-  return "Yes. We use EPA-registered products approved for use in homes, businesses, and sensitive environments like hospitals, pet facilities, and daycare centers — applied precisely where pests live, not broadcast through your living space.";
+  return "Yes. We use EPA-registered products approved for use in homes, businesses, and sensitive environments like hospitals, pet facilities, and daycare centers, applied precisely where pests live, not broadcast through your living space.";
 }

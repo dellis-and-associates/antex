@@ -8,27 +8,27 @@ import { StatCard } from "@/components/StatCard";
 import { AreaCard } from "@/components/AreaCard";
 import { TrustBar } from "@/components/TrustBar";
 import { CTABand } from "@/components/CTABand";
+import Image from "next/image";
 import { PerimeterFrame } from "@/components/PerimeterFrame";
-import { HouseScene } from "@/components/HouseScene";
 import { CheckIcon } from "@/components/icons";
 import { SERVICES } from "@/lib/services";
 import { LOCATIONS } from "@/lib/locations";
 import { GUARANTEE_SHORT, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Antex Pest Solutions — Pest Control in St George, Vernal & Northern Utah",
+  title: "Antex Pest Solutions | Pest Control in St George, Vernal & Northern Utah",
   description:
-    "Local exterminator and pest control in St George, Vernal & Northern Utah. Ants, rodents, termites, wasps, spiders & scorpions — safe, effective & guaranteed since 2014. Free inspections: (435) 313-5882.",
+    "Local exterminator and pest control in St George, Vernal & Northern Utah. Ants, rodents, termites, wasps, spiders & scorpions. Safe, effective & guaranteed since 2014. Free inspections: (435) 313-5882.",
 };
 
 const WHY_POINTS = [
   {
     title: "Root-cause treatment.",
-    copy: "We fix the conditions that invite pests — inspection, exclusion and prevention, not just visible symptoms.",
+    copy: "We fix the conditions that invite pests: inspection, exclusion and prevention, not just visible symptoms.",
   },
   {
     title: "Faster response.",
-    copy: "We schedule quicker than the big franchises — critical for rodents and stinging insects.",
+    copy: "We schedule quicker than the big franchises, which is critical for rodents and stinging insects.",
   },
   {
     title: "Less chemical, more precision.",
@@ -53,7 +53,7 @@ export default function Home() {
               <em className="not-italic text-red-600">holds the line.</em>
             </h1>
             <p className="text-[19px] max-w-[52ch]">
-              Antex draws a treated perimeter around your home or business — and
+              Antex draws a treated perimeter around your home or business, and
               stands behind it. If pests cross it between visits, we come back
               and fix it at no charge.
             </p>
@@ -77,7 +77,14 @@ export default function Home() {
 
           <div className="relative">
             <PerimeterFrame>
-              <HouseScene />
+              <Image
+                src="/hero-home.webp"
+                alt="A well-kept family home with a healthy green lawn, protected by Antex Pest Solutions"
+                width={1600}
+                height={1067}
+                priority
+                className="rounded-md object-cover aspect-[4/3]"
+              />
               <div
                 id="guarantee"
                 className="absolute -bottom-6 left-[34px] bg-white border border-paper-200 rounded-[14px] shadow-card px-5 py-[14px] flex items-center gap-[13px]"
@@ -105,7 +112,7 @@ export default function Home() {
             eyebrow="What we handle"
             title="One call covers every pest on the property."
           >
-            Complete solutions for insects, rodents and wildlife — inspected,
+            Complete solutions for insects, rodents and wildlife, inspected,
             treated and prevented by licensed local technicians.
           </SectionHeader>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[22px]">
@@ -130,7 +137,7 @@ export default function Home() {
             title="Three steps. One held perimeter."
             tone="dark"
           >
-            Every service follows the same disciplined sequence — because
+            Every service follows the same disciplined sequence, because
             lasting protection is a process, not a spray.
           </SectionHeader>
           <Steps>
@@ -140,7 +147,7 @@ export default function Home() {
             </Step>
             <Step num="STEP 02" title="Treat">
               Targeted, EPA-registered products applied where pests actually
-              live — tailored to your property, never one-size-fits-all.
+              live. Tailored to your property, never one-size-fits-all.
             </Step>
             <Step num="STEP 03" title="Protect">
               Scheduled visits keep the barrier sealed. If anything crosses the
@@ -160,7 +167,7 @@ export default function Home() {
             </h2>
             <p>
               Founded in St George in 2014 by Jason Ribbens, Antex knows Utah&apos;s
-              pests the way only locals can — seasonal rodent surges, native ant
+              pests the way only locals can: seasonal rodent surges, native ant
               species, termite risk by neighborhood and building style.
             </p>
             <ul className="mt-[30px] grid gap-[18px] list-none">
@@ -176,7 +183,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <StatCard value="2014">
-              Founded in St George — family-owned and operated ever since
+              Founded in St George, family-owned and operated ever since
             </StatCard>
             <StatCard value="3">
               Offices across Utah: St George, Vernal & American Fork

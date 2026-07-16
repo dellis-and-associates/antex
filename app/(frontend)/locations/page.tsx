@@ -7,7 +7,7 @@ import { LOCATIONS } from "@/lib/locations";
 import { COUNTIES_SERVED, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Locations — St George, Vernal & Northern Utah",
+  title: "Locations | St George, Vernal & Northern Utah",
   description:
     "Antex Pest Solutions offices in St George, Vernal and American Fork, serving 13 Utah counties. Local exterminators, one number: (435) 313-5882.",
 };
@@ -22,7 +22,7 @@ export default function LocationsPage() {
             Three offices. All of Utah&apos;s pest pressure covered.
           </h1>
           <p className="text-[19px] max-w-[52ch]">
-            From red-rock country to the Uinta Basin to the Wasatch Front —
+            From red-rock country to the Uinta Basin to the Wasatch Front:
             local technicians who know the pests on your street, reachable at
             one number:{" "}
             <a href={PHONE_TEL} className="font-mono text-[17px] text-red-700 perimeter-underline whitespace-nowrap">
@@ -69,7 +69,7 @@ export default function LocationsPage() {
                   i % 2 === 1 ? "lg:order-1" : ""
                 }`}
                 role="img"
-                aria-label={`Map of the Antex ${l.city} office at ${l.streetAddress}, ${l.addressLocality}, UT — embed coming soon`}
+                aria-label={`Map of the Antex ${l.city} office at ${l.streetAddress}, ${l.addressLocality}, UT (embed coming soon)`}
               >
                 <div className="text-center">
                   <svg
@@ -86,7 +86,7 @@ export default function LocationsPage() {
                     <circle cx="12" cy="10" r="2.6" />
                   </svg>
                   <p className="font-mono text-[12px] tracking-[0.14em] uppercase text-red-700 mt-3">
-                    Map — {l.addressLocality}, UT
+                    Map of {l.addressLocality}, UT
                   </p>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function LocationsPage() {
         <div className="max-w-wrap mx-auto px-8">
           <SectionHeader eyebrow="Coverage" title="Serving 13 Utah counties.">
             Wherever you are along the line, the same guarantee applies: if
-            pests return between scheduled visits, so do we — free.
+            pests return between scheduled visits, so do we. Free.
           </SectionHeader>
           <ul className="flex flex-wrap gap-3 list-none">
             {COUNTIES_SERVED.map((county) => (

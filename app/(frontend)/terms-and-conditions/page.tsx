@@ -50,7 +50,7 @@ export default function TermsPage() {
           <p>
             Information on this website is provided for general informational
             purposes only. It does not guarantee specific treatment results,
-            immediate service availability, or exact pricing — final pricing
+            immediate service availability, or exact pricing. Final pricing
             may require an on-site inspection.
           </p>
 

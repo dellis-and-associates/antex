@@ -17,7 +17,7 @@ export const Posts: CollectionConfig = {
       required: true,
       unique: true,
       index: true,
-      admin: { description: "URL path: /blog/<slug> — lowercase, hyphenated" },
+      admin: { description: "URL path: /blog/<slug> (lowercase, hyphenated)" },
     },
     {
       name: "topic",

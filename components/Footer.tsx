@@ -59,7 +59,7 @@ export function Footer() {
             {LOCATIONS.map((l) => (
               <li key={l.slug}>
                 <Link href="/locations" className="hover:text-white hover:underline">
-                  {l.addressLocality} — {l.streetAddress}
+                  {l.addressLocality}: {l.streetAddress}
                 </Link>
               </li>
             ))}

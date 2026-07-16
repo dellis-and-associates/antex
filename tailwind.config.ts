@@ -75,9 +75,11 @@ const config: Config = {
   				'var(--font-body)',
   				'sans-serif'
   			],
+  			// label/eyebrow text shares the body family (uppercase + tracking
+  			// carries the "inspection report" look without a mono face)
   			mono: [
-  				'var(--font-mono)',
-  				'monospace'
+  				'var(--font-body)',
+  				'sans-serif'
   			]
   		},
   		fontSize: {
@@ -118,7 +120,8 @@ const config: Config = {
   				'13px',
   				{
   					lineHeight: '20px',
-  					letterSpacing: '0.16em'
+  					letterSpacing: '0.16em',
+  					fontWeight: '600'
   				}
   			],
   			button: [

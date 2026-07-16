@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
 /**
- * The "inspection report" label: Space Mono, uppercase, 0.16em tracking,
- * led by a short dashed perimeter tick (BRAND-GUIDE.md §3, §4).
+ * The "inspection report" label: semibold body face, uppercase, 0.16em
+ * tracking, led by a short dashed perimeter tick (BRAND-GUIDE.md §3, §4).
  */
 export function Eyebrow({
   children,

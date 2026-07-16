@@ -5,7 +5,7 @@ import { PHONE_DISPLAY, PHONE_TEL, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Antex Pest Solutions collects, uses and protects your information — including our SMS/text messaging privacy commitments.",
+    "How Antex Pest Solutions collects, uses and protects your information, including our SMS/text messaging privacy commitments.",
 };
 
 export default function PrivacyPolicyPage() {

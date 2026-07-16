@@ -35,7 +35,7 @@ export function JsonLd() {
       ...LOCATIONS.map((l) => ({
         "@type": "PestControl",
         "@id": `${SITE_URL}/#${l.slug}`,
-        name: `Antex Pest Solutions — ${l.city}`,
+        name: `Antex Pest Solutions ${l.city}`,
         parentOrganization: { "@id": `${SITE_URL}/#organization` },
         url: `${SITE_URL}/locations`,
         telephone: PHONE_E164,

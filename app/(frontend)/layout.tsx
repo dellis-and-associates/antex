@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Archivo, Bricolage_Grotesque, Space_Mono } from "next/font/google";
+import { Archivo, Plus_Jakarta_Sans } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const display = Bricolage_Grotesque({
+const display = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["700", "800"],
   variable: "--font-display",
@@ -20,26 +20,19 @@ const body = Archivo({
   display: "swap",
 });
 
-const mono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Antex Pest Solutions — Pest control that holds the line",
+    default: "Antex Pest Solutions | Pest Control That Holds the Line",
     template: "%s | Antex Pest Solutions",
   },
   description:
-    "Family-owned pest control and exterminator services in St George, Vernal & Northern Utah since 2014. Safe, effective & guaranteed results — free inspections, EPA-registered products.",
+    "Family-owned pest control and exterminator services in St George, Vernal & Northern Utah since 2014. Safe, effective & guaranteed results, with free inspections and EPA-registered products.",
   openGraph: {
     type: "website",
     siteName: "Antex Pest Solutions",
     url: SITE_URL,
-    title: "Antex Pest Solutions — Pest control that holds the line",
+    title: "Antex Pest Solutions | Pest Control That Holds the Line",
     description:
       "Family-owned pest control in St George, Vernal & Northern Utah since 2014. Free inspections, free re-service guarantee.",
   },
@@ -51,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body>
         <a
           href="#main"

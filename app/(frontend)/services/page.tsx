@@ -6,7 +6,7 @@ import { CTABand } from "@/components/CTABand";
 import { SERVICES } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Pest Control Services — Ants, Rodents, Termites & More",
+  title: "Pest Control Services | Ants, Rodents, Termites & More",
   description:
     "Every pest on the property, one call: ants, rodents, termites, wasps, spiders & scorpions, plus documented commercial programs. Serving St George, Vernal & Northern Utah.",
 };
@@ -21,7 +21,7 @@ export default function ServicesPage() {
             One call covers every pest on the property.
           </h1>
           <p className="text-[19px] max-w-[52ch]">
-            Complete solutions for insects, rodents and wildlife — inspected,
+            Complete solutions for insects, rodents and wildlife, inspected,
             treated and prevented by licensed local technicians, and backed by
             our free re-service guarantee.
           </p>

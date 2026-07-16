@@ -41,7 +41,7 @@ export function Navbar() {
             SERVING ST GEORGE · VERNAL · NORTHERN UTAH
           </span>
           <a href={PHONE_TEL} className="hover:text-white hover:underline">
-            CALL TODAY — {PHONE_DISPLAY}
+            CALL TODAY: {PHONE_DISPLAY}
           </a>
         </div>
       </div>

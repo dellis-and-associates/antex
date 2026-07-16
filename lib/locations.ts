@@ -18,7 +18,7 @@ export const LOCATIONS: OfficeLocation[] = [
     addressLocality: "St George",
     geo: { latitude: 37.1146, longitude: -113.6056 },
     regionCopy:
-      "Our home base since 2014. Scorpions, ants and roof rats thrive in Washington County's desert climate — we treat them year-round, street by street.",
+      "Our home base since 2014. Scorpions, ants and roof rats thrive in Washington County's desert climate, and we treat them year-round, street by street.",
   },
   {
     slug: "vernal",
@@ -38,6 +38,6 @@ export const LOCATIONS: OfficeLocation[] = [
     addressLocality: "American Fork",
     geo: { latitude: 40.3717, longitude: -111.7808 },
     regionCopy:
-      "Serving the Wasatch Front and Salt Lake metro from American Fork — homes, restaurants and commercial facilities across Utah, Salt Lake, Davis and Weber counties.",
+      "Serving the Wasatch Front and Salt Lake metro from American Fork: homes, restaurants and commercial facilities across Utah, Salt Lake, Davis and Weber counties.",
   },
 ];

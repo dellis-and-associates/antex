@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Args) {
       <CTABand
         eyebrow="Seeing this at home?"
         title="Get a free inspection from a local technician."
-        copy="Tell us what you're finding and we'll trace it to the source — entry points, harborage and all. Guaranteed."
+        copy="Tell us what you're finding and we'll trace it to the source: entry points, harborage and all. Guaranteed."
       />
     </>
   );

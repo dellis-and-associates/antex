@@ -11,9 +11,9 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Get a Free Pest Inspection — Contact Antex",
+  title: "Get a Free Pest Inspection | Contact Antex",
   description:
-    "Book a free pest inspection in St George, Vernal or Northern Utah. Tell us what you're seeing and we'll schedule your visit — or call (435) 313-5882.",
+    "Book a free pest inspection in St George, Vernal or Northern Utah. Tell us what you're seeing and we'll schedule your visit, or call (435) 313-5882.",
 };
 
 export default function ContactPage() {
@@ -27,7 +27,7 @@ export default function ContactPage() {
           </h1>
           <p className="text-[19px] max-w-[48ch]">
             A member of our team will be in touch shortly to schedule your free
-            inspection — usually the same week.
+            inspection, usually the same week.
           </p>
           <a
             href={PHONE_TEL}
@@ -50,7 +50,7 @@ export default function ContactPage() {
           <div className="mt-10 border-t border-dashed border-[rgba(228,52,43,0.45)] pt-8 grid gap-3 text-[14.5px]">
             {LOCATIONS.map((l) => (
               <p key={l.slug}>
-                <strong className="text-ink-950">{l.city}</strong> —{" "}
+                <strong className="text-ink-950">{l.city}:</strong>{" "}
                 {l.streetAddress}, {l.addressLocality}, UT
               </p>
             ))}

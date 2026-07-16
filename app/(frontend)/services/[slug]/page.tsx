@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/Button";
 import { Eyebrow } from "@/components/Eyebrow";
@@ -7,7 +8,6 @@ import { Step, Steps } from "@/components/Step";
 import { TrustBar } from "@/components/TrustBar";
 import { CTABand } from "@/components/CTABand";
 import { PerimeterFrame } from "@/components/PerimeterFrame";
-import { ServiceIcon } from "@/components/icons";
 import { getService, SERVICES } from "@/lib/services";
 import { GUARANTEE_VERBATIM, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
@@ -51,10 +51,15 @@ export default async function ServicePage({ params }: Props) {
             </div>
           </div>
           <div className="max-lg:hidden">
-            <PerimeterFrame className="grid place-items-center py-16">
-              <div className="w-[120px] h-[120px] rounded-[28px] bg-red-50 grid place-items-center text-red-700">
-                <ServiceIcon name={service.icon} className="w-16 h-16" />
-              </div>
+            <PerimeterFrame>
+              <Image
+                src={service.image.src}
+                alt={service.image.alt}
+                width={1600}
+                height={1200}
+                priority
+                className="rounded-md object-cover aspect-[4/3]"
+              />
             </PerimeterFrame>
           </div>
         </div>

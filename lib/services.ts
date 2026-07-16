@@ -11,6 +11,8 @@ export type Service = {
   /** Short name used in footer / compact lists. */
   shortName: string;
   icon: "ant" | "rodent" | "termite" | "wasp" | "scorpion" | "building";
+  /** Hero photo (public/services/*, 4:3, CC0/public-domain sources). */
+  image: { src: string; alt: string };
   card: string; // service-card copy from the approved homepage
   heroEyebrow: string;
   heroTitle: string;
@@ -29,6 +31,10 @@ export const SERVICES: Service[] = [
     name: "Ants & general pests",
     shortName: "Ants & general pests",
     icon: "ant",
+    image: {
+      src: "/services/ants.webp",
+      alt: "Close-up of a red ant facing the camera against a dark background",
+    },
     card: "Local ant species, roaches, earwigs and crawling insects, treated at the colony, not just the trail.",
     heroEyebrow: "Ants · Roaches · Earwigs · Crawling insects",
     heroTitle: "Ant control that treats the colony, not the trail.",
@@ -98,6 +104,10 @@ export const SERVICES: Service[] = [
     name: "Rodents & mice",
     shortName: "Rodents & mice",
     icon: "rodent",
+    image: {
+      src: "/services/rodents.webp",
+      alt: "House mouse crouched on bare ground, seen up close",
+    },
     card: "It's rodent season in Utah. Exclusion, trapping and entry-point sealing. Free inspections available now.",
     heroEyebrow: "Mice · Roof rats · Exclusion",
     heroTitle: "Rodent control that seals the way in.",
@@ -167,6 +177,10 @@ export const SERVICES: Service[] = [
     name: "Termites",
     shortName: "Termites",
     icon: "termite",
+    image: {
+      src: "/services/termites.webp",
+      alt: "Macro photograph of a subterranean termite worker against a dark background",
+    },
     card: "Inspections, treatment and monitoring that protect the structure itself, before damage compounds.",
     heroEyebrow: "Termites · Wood-destroying insects",
     heroTitle: "Termite protection for the structure itself.",
@@ -237,6 +251,10 @@ export const SERVICES: Service[] = [
     name: "Wasps & stinging insects",
     shortName: "Stinging insects",
     icon: "wasp",
+    image: {
+      src: "/services/wasps.webp",
+      alt: "Paper wasps crawling on an exposed nest attached to a wall",
+    },
     card: "Fast, safe removal of wasps, hornets and yellowjackets, with priority scheduling for active nests.",
     heroEyebrow: "Wasps · Hornets · Yellowjackets",
     heroTitle: "Active nest? We prioritize stinging insects.",
@@ -298,6 +316,10 @@ export const SERVICES: Service[] = [
     name: "Spiders & scorpions",
     shortName: "Spiders & scorpions",
     icon: "scorpion",
+    image: {
+      src: "/services/spiders-scorpions.webp",
+      alt: "Bark scorpion resting on sandy desert soil",
+    },
     card: "Desert-climate specialists: barrier treatments tuned to St George's year-round arachnid pressure.",
     heroEyebrow: "Spiders · Scorpions · Desert pests",
     heroTitle: "Built for the desert's year-round arachnid pressure.",
@@ -359,6 +381,10 @@ export const SERVICES: Service[] = [
     name: "Commercial programs",
     shortName: "Commercial programs",
     icon: "building",
+    image: {
+      src: "/services/commercial.webp",
+      alt: "Stainless steel commercial kitchen with ranges and prep tables",
+    },
     card: "Documented pest management for restaurants, offices, hospitals, pet facilities and daycare centers.",
     heroEyebrow: "Restaurants · Offices · Healthcare · Facilities",
     heroTitle: "Documented pest management your auditor will like.",

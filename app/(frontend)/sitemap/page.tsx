@@ -4,19 +4,19 @@ import { Eyebrow } from "@/components/Eyebrow";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StatCard } from "@/components/StatCard";
 import { CTABand } from "@/components/CTABand";
+import { pageMeta } from "@/lib/meta";
 import { getAllCmsPages, type CmsPage } from "@/lib/pages";
 import { getAllPosts } from "@/lib/posts";
 import { SERVICES } from "@/lib/services";
-import { SITE_URL } from "@/lib/site";
 
 export const revalidate = 3600;
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Site Directory",
   description:
     "Every page on antexpestsolutions.com in one place: services, pest library, and all 86 Utah cities we serve, county by county.",
-  alternates: { canonical: `${SITE_URL}/sitemap` },
-};
+  path: "/sitemap",
+});
 
 export default async function SiteDirectoryPage() {
   const [pages, posts] = await Promise.all([getAllCmsPages(), getAllPosts()]);

@@ -12,6 +12,7 @@ import {
   getPageByPath,
   type CmsPage,
 } from "@/lib/pages";
+import { pageMeta } from "@/lib/meta";
 import { PHONE_DISPLAY, PHONE_TEL, SITE_URL } from "@/lib/site";
 
 /**
@@ -31,11 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const page = await getPageByPath(pathFrom(slug));
   if (!page) return {};
-  return {
+  return pageMeta({
     title: page.title,
-    description: page.metaDescription ?? undefined,
-    alternates: { canonical: `${SITE_URL}${page.path}` },
-  };
+    description:
+      page.metaDescription ??
+      "Pest control in St George, Vernal & Northern Utah since 2014. Free inspections, EPA-registered products and a free re-service guarantee.",
+    path: page.path,
+  });
 }
 
 const HUB_TYPES = new Set([

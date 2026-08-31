@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Eyebrow } from "@/components/Eyebrow";
 import { SectionHeader } from "@/components/SectionHeader";
 import { TrustBar } from "@/components/TrustBar";
@@ -6,11 +7,12 @@ import { CTABand } from "@/components/CTABand";
 import { LOCATIONS } from "@/lib/locations";
 import { COUNTIES_SERVED, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Locations | St George, Vernal & Northern Utah",
   description:
     "Antex Pest Solutions offices in St George, Vernal and American Fork, serving 13 Utah counties. Local exterminators, one number: (435) 313-5882.",
-};
+  path: "/locations",
+});
 
 export default function LocationsPage() {
   return (

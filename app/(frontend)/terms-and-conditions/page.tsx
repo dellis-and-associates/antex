@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Eyebrow } from "@/components/Eyebrow";
 import { PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Terms of Service",
   description:
     "The terms and conditions that govern use of the Antex Pest Solutions website and requests for our pest control services.",
-};
+  path: "/terms-and-conditions",
+});
 
 export default function TermsPage() {
   return (

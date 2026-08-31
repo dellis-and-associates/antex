@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Eyebrow } from "@/components/Eyebrow";
 import {
   EMAIL,
@@ -8,11 +9,12 @@ import {
   SITE_URL,
 } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Privacy Policy",
   description:
     "How Antex Pest Solutions collects, uses and protects your information, including our SMS/text messaging privacy commitments.",
-};
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (

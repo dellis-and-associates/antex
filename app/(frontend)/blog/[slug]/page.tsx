@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { RichText } from "@payloadcms/richtext-lexical/react";
 import { CTABand } from "@/components/CTABand";
 import { BLOG_POSTS } from "@/lib/blog";
+import { pageMeta } from "@/lib/meta";
 import { getPost } from "@/lib/posts";
 
 type Args = { params: Promise<{ slug: string }> };
@@ -20,11 +21,12 @@ export async function generateMetadata({ params }: Args): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  return {
+  return pageMeta({
     title: post.title,
     description: post.summary,
-    openGraph: { title: post.title, description: post.summary, type: "article" },
-  };
+    path: `/blog/${slug}`,
+    ogType: "article",
+  });
 }
 
 export default async function BlogPostPage({ params }: Args) {

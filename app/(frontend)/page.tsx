@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Button } from "@/components/Button";
 import { Eyebrow } from "@/components/Eyebrow";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -15,11 +16,13 @@ import { SERVICES } from "@/lib/services";
 import { LOCATIONS } from "@/lib/locations";
 import { GUARANTEE_SHORT, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Antex Pest Solutions | Pest Control in St George, Vernal & Northern Utah",
+  absolute: true,
   description:
     "Local exterminator and pest control in St George, Vernal & Northern Utah. Ants, rodents, termites, wasps, spiders & scorpions. Safe, effective & guaranteed since 2014. Free inspections: (435) 313-5882.",
-};
+  path: "/",
+});
 
 const WHY_POINTS = [
   {

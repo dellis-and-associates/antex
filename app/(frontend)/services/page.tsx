@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Eyebrow } from "@/components/Eyebrow";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TrustBar } from "@/components/TrustBar";
 import { CTABand } from "@/components/CTABand";
 import { SERVICES } from "@/lib/services";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Pest Control Services | Ants, Rodents, Termites & More",
   description:
     "Every pest on the property, one call: ants, rodents, termites, wasps, spiders & scorpions, plus documented commercial programs. Serving St George, Vernal & Northern Utah.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

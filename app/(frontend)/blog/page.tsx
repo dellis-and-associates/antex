@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import Link from "next/link";
 import { Eyebrow } from "@/components/Eyebrow";
 import { CTABand } from "@/components/CTABand";
 import { getAllPosts } from "@/lib/posts";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Blog | Utah Pest Control Field Notes",
   description:
     "Field notes from Antex technicians: rodents, box elder bugs and the pest pressure Utah homeowners actually face, from St George to the Wasatch Front.",
-};
+  path: "/blog",
+});
 
 // Revalidate so posts published in the CMS appear without a redeploy.
 export const revalidate = 600;

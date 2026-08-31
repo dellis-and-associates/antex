@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/meta";
 import { Eyebrow } from "@/components/Eyebrow";
 import { ContactForm } from "@/components/ContactForm";
 import { CheckIcon } from "@/components/icons";
@@ -10,11 +11,12 @@ import {
   PHONE_TEL,
 } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: "Get a Free Pest Inspection | Contact Antex",
   description:
     "Book a free pest inspection in St George, Vernal or Northern Utah. Tell us what you're seeing and we'll schedule your visit, or call (435) 313-5882.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

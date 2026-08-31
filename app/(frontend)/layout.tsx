@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { OG_IMAGE } from "@/lib/meta";
 import "./globals.css";
 
 const display = Plus_Jakarta_Sans({
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
   },
   description:
     "Family-owned pest control and exterminator services in St George, Vernal & Northern Utah since 2014. Safe, effective & guaranteed results, with free inspections and EPA-registered products.",
+  applicationName: "Antex Pest Solutions",
   openGraph: {
     type: "website",
     siteName: "Antex Pest Solutions",
@@ -35,6 +37,14 @@ export const metadata: Metadata = {
     title: "Antex Pest Solutions | Pest Control That Holds the Line",
     description:
       "Family-owned pest control in St George, Vernal & Northern Utah since 2014. Free inspections, free re-service guarantee.",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Antex Pest Solutions | Pest Control That Holds the Line",
+    description:
+      "Family-owned pest control in St George, Vernal & Northern Utah since 2014. Free inspections, free re-service guarantee.",
+    images: [OG_IMAGE.url],
   },
 };
 

@@ -9,6 +9,7 @@ import { TrustBar } from "@/components/TrustBar";
 import { CTABand } from "@/components/CTABand";
 import { PerimeterFrame } from "@/components/PerimeterFrame";
 import { getService, SERVICES } from "@/lib/services";
+import { pageMeta } from "@/lib/meta";
 import { GUARANTEE_VERBATIM, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -21,10 +22,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = getService(slug);
   if (!service) return {};
-  return {
-    title: { absolute: service.metaTitle },
+  return pageMeta({
+    title: service.metaTitle,
+    absolute: true,
     description: service.metaDescription,
-  };
+    path: `/services/${service.slug}`,
+  });
 }
 
 export default async function ServicePage({ params }: Props) {

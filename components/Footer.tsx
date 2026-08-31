@@ -39,6 +39,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/pest-library" className="hover:text-white hover:underline">
+                Pest library
+              </Link>
+            </li>
+            <li>
               <Link href="/blog" className="hover:text-white hover:underline">
                 Blog
               </Link>

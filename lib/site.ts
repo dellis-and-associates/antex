@@ -4,7 +4,7 @@
  * Do not edit the verbatim strings without a compliance review.
  */
 
-export const SITE_URL = "https://antex-one.vercel.app";
+export const SITE_URL = "https://www.antexpestsolutions.com";
 
 export const PHONE_DISPLAY = "(435) 313-5882";
 export const PHONE_TEL = "tel:4353135882";

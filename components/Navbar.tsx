@@ -19,8 +19,9 @@ import { CUSTOMER_LOGIN_URL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
 const LINKS = [
   { href: "/services", label: "Services" },
-  { href: "/#process", label: "How it works" },
+  { href: "/pest-library", label: "Pest library" },
   { href: "/locations", label: "Locations" },
+  { href: "/#process", label: "How it works" },
   { href: "/blog", label: "Blog" },
   { href: CUSTOMER_LOGIN_URL, label: "Customer login", external: true },
 ];

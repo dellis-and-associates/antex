@@ -54,5 +54,3 @@ every 10 minutes.
   `app/api/contact/route.ts`
 - Map embeds on the locations page
 
-
-

@@ -26,6 +26,50 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
+  // Cloudflare Turnstile bot check. Fails OPEN on a Cloudflare/network
+  // outage (logged): losing a real lead is worse than one spam slipping by.
+  if (process.env.TURNSTILE_SECRET_KEY) {
+    const token =
+      typeof data["cf-turnstile-response"] === "string"
+        ? data["cf-turnstile-response"]
+        : "";
+    const remoteip =
+      request.headers.get("cf-connecting-ip") ??
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+      undefined;
+    let human = true;
+    try {
+      const res = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            secret: process.env.TURNSTILE_SECRET_KEY,
+            response: token,
+            remoteip,
+          }),
+        }
+      );
+      const verdict = (await res.json()) as {
+        success?: boolean;
+        "error-codes"?: string[];
+      };
+      human = verdict.success === true;
+      if (!human) {
+        console.warn("[contact] Turnstile rejected:", verdict["error-codes"]);
+      }
+    } catch (err) {
+      console.error("[contact] Turnstile verify unreachable, allowing:", err);
+    }
+    if (!human) {
+      return NextResponse.json(
+        { error: "Verification failed. Please try again." },
+        { status: 403 }
+      );
+    }
+  }
+
   const missing = REQUIRED_FIELDS.filter(
     (f) => typeof data[f] !== "string" || (data[f] as string).trim() === ""
   );

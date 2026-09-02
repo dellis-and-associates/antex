@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -20,6 +21,23 @@ import {
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+/* Cloudflare Turnstile bot check. Skipped entirely when the site key is
+   unset; the API route likewise only verifies when its secret is set. */
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        el: HTMLElement,
+        opts: { sitekey: string; theme?: string; action?: string }
+      ) => string;
+      reset: (widgetId?: string) => void;
+      remove: (widgetId: string) => void;
+    };
+  }
+}
+
 /* Brand field skin over the shadcn defaults (live-site parity). */
 const inputCls =
   "h-auto bg-white border-paper-200 rounded-[10px] px-4 py-3 text-[15.5px] md:text-[15.5px] text-ink-950 shadow-none placeholder:text-basalt-700/50 focus:border-red-600";
@@ -28,6 +46,29 @@ const labelCls = "block font-medium text-[14.5px] leading-normal text-ink-950 mb
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetId = useRef<string | null>(null);
+
+  // Explicit render (survives client-side navigation, unlike the implicit
+  // scan the script does once on load). Polls until the script is ready.
+  useEffect(() => {
+    const el = turnstileRef.current;
+    if (!TURNSTILE_SITE_KEY || !el) return;
+    const timer = setInterval(() => {
+      if (!window.turnstile) return;
+      clearInterval(timer);
+      widgetId.current = window.turnstile.render(el, {
+        sitekey: TURNSTILE_SITE_KEY,
+        theme: "light",
+        action: "contact",
+      });
+    }, 100);
+    return () => {
+      clearInterval(timer);
+      if (widgetId.current) window.turnstile?.remove(widgetId.current);
+      widgetId.current = null;
+    };
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -73,6 +114,8 @@ export function ContactForm() {
       setStatus("success");
       form.reset();
     } catch {
+      // Turnstile tokens are single-use; issue a fresh one for the retry.
+      if (widgetId.current) window.turnstile?.reset(widgetId.current);
       setStatus("error");
     }
   }
@@ -158,6 +201,17 @@ export function ContactForm() {
         <Consent name="consentTransactional" text={SMS_CONSENT_TRANSACTIONAL} />
         <Consent name="consentMarketing" text={SMS_CONSENT_MARKETING} />
       </fieldset>
+
+      {TURNSTILE_SITE_KEY ? (
+        <>
+          <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+            strategy="lazyOnload"
+          />
+          {/* Turnstile injects its hidden cf-turnstile-response input here */}
+          <div ref={turnstileRef} className="mt-6" />
+        </>
+      ) : null}
 
       <div className="mt-8">
         <Button type="submit" disabled={status === "submitting"}>

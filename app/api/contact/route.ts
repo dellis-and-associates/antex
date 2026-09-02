@@ -94,10 +94,67 @@ export async function POST(request: Request) {
     }
   }
 
-  // TODO(CRM): forward `lead` to the GoHighLevel/LeadConnector inbound webhook
-  // that powers the current site's form. Set the webhook URL in an env var
-  // (e.g. LEADCONNECTOR_WEBHOOK_URL) and POST the payload there — including
-  // both SMS consent booleans, which must be persisted for A2P compliance.
+  // Forward to the GoHighLevel inbound-webhook workflow, which creates the
+  // CRM contact and runs the client's follow-up automations. Both SMS
+  // consent booleans ride along (required for A2P compliance downstream).
+  // Setup guide: docs/ghl-workflow-setup.md
+  if (process.env.LEADCONNECTOR_WEBHOOK_URL) {
+    try {
+      const res = await fetch(process.env.LEADCONNECTOR_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(lead),
+      });
+      if (!res.ok) throw new Error(`GHL webhook responded ${res.status}`);
+    } catch (err) {
+      console.error("[contact] failed to forward lead to GHL:", err);
+    }
+  }
+
+  // Email the lead to the owner via Resend. Never blocks the visitor.
+  if (process.env.RESEND_API_KEY) {
+    try {
+      const yn = (v: boolean) => (v ? "Yes" : "No");
+      const text = [
+        "New lead from antexpestsolutions.com",
+        "",
+        `Name: ${lead.firstName} ${lead.lastName}`,
+        `Phone: ${lead.phone}`,
+        `Email: ${lead.email}`,
+        `Address: ${lead.street}, ${lead.city}, ${lead.state} ${lead.postalCode}, ${lead.country}`,
+        `New customer: ${lead.newCustomer}`,
+        "",
+        "Message:",
+        `${lead.message}`,
+        "",
+        `SMS consent, transactional: ${yn(lead.consentTransactional)}`,
+        `SMS consent, marketing: ${yn(lead.consentMarketing)}`,
+        `Submitted: ${lead.submittedAt}`,
+      ].join("\n");
+      const res = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          from:
+            process.env.EMAIL_FROM ??
+            "Antex Website <leads@antexpestsolutions.com>",
+          to: process.env.OWNER_EMAIL ?? "Jribbens@antexpestsolutions.com",
+          reply_to: lead.email,
+          subject: `New lead: ${lead.firstName} ${lead.lastName} (${lead.city})`,
+          text,
+        }),
+      });
+      if (!res.ok) {
+        throw new Error(`Resend responded ${res.status}: ${await res.text()}`);
+      }
+    } catch (err) {
+      console.error("[contact] failed to email lead notification:", err);
+    }
+  }
+
   if (!saved) {
     console.log("[contact] new lead (CMS not configured):", lead);
   }

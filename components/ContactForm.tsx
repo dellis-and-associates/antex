@@ -30,7 +30,14 @@ declare global {
     turnstile?: {
       render: (
         el: HTMLElement,
-        opts: { sitekey: string; theme?: string; action?: string }
+        opts: {
+          sitekey: string;
+          theme?: string;
+          action?: string;
+          callback?: (token: string) => void;
+          "expired-callback"?: () => void;
+          "error-callback"?: () => void;
+        }
       ) => string;
       reset: (widgetId?: string) => void;
       remove: (widgetId: string) => void;
@@ -46,6 +53,9 @@ const labelCls = "block font-medium text-[14.5px] leading-normal text-ink-950 mb
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  // Submit stays disabled until Turnstile hands out a token (instant and
+  // automatic for almost everyone). Trivially true when Turnstile is off.
+  const [verified, setVerified] = useState(!TURNSTILE_SITE_KEY);
   const turnstileRef = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | null>(null);
 
@@ -61,6 +71,9 @@ export function ContactForm() {
         sitekey: TURNSTILE_SITE_KEY,
         theme: "light",
         action: "contact",
+        callback: () => setVerified(true),
+        "expired-callback": () => setVerified(false),
+        "error-callback": () => setVerified(false),
       });
     }, 100);
     return () => {
@@ -115,7 +128,10 @@ export function ContactForm() {
       form.reset();
     } catch {
       // Turnstile tokens are single-use; issue a fresh one for the retry.
-      if (widgetId.current) window.turnstile?.reset(widgetId.current);
+      if (widgetId.current) {
+        setVerified(false);
+        window.turnstile?.reset(widgetId.current);
+      }
       setStatus("error");
     }
   }
@@ -206,7 +222,7 @@ export function ContactForm() {
         <>
           <Script
             src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
-            strategy="lazyOnload"
+            strategy="afterInteractive"
           />
           {/* Turnstile injects its hidden cf-turnstile-response input here */}
           <div ref={turnstileRef} className="mt-6" />
@@ -214,9 +230,14 @@ export function ContactForm() {
       ) : null}
 
       <div className="mt-8">
-        <Button type="submit" disabled={status === "submitting"}>
+        <Button type="submit" disabled={status === "submitting" || !verified}>
           {status === "submitting" ? "Sending…" : "Book my free inspection"}
         </Button>
+        {!verified && status !== "submitting" ? (
+          <p className="text-[13px] text-basalt-700/70 mt-3">
+            One moment, running a quick security check…
+          </p>
+        ) : null}
         {status === "error" ? (
           <p className="text-[14px] text-red-700 mt-3" role="alert">
             Something went wrong sending your request. Please try again, or
